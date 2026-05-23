@@ -1,22 +1,894 @@
-<!doctype html><html data-build-id="4e3cd7292f" data-git-hash="4e3cd7292fd878266e3c0868569d9274544f8040" data-build-timestamp="1779477454" data-version="1.0.0" data-env="" data-color-version="v2" lang="en" data-theme="claude" data-mode="dark" class="h-screen antialiased scroll-smooth"><head data-ion-ip-country="US"><link rel="preconnect" href="https://assets-proxy.anthropic.com" crossorigin><link rel="dns-prefetch" href="https://assets-proxy.anthropic.com"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title data-react-fallback>Claude</title><meta data-react-fallback name="description" content="Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work."><meta name="apple-itunes-app" content="app-id=6473753684"><meta property="og:type" content="website"><meta property="og:site_name" content="Claude"><meta property="og:image" content="https://claude.ai/images/claude_ogimage.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg"><link rel="icon" type="image/png" sizes="32x32" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce67964e7-CAX1bqSh.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c03e51811-DebilQLI.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-jJjJELY8.png"><link rel="apple-touch-startup-image" href="/images/claude_app_icon.png"><link rel="manifest" href="/manifest.json"><meta name="mobile-web-app-capable" content="yes"><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-CFxw3nG7.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c66fc489e-C-BHYa_K.woff2" as="font" type="font/woff2" crossorigin><script nonce="CC0x2Ys6J14BUSenT9HTMw==">void 0===globalThis.process&&(globalThis.process={env:{},cwd:function(){return"/"}}),void 0===globalThis.global&&(globalThis.global=globalThis)</script><script type="application/ld+json" nonce="CC0x2Ys6J14BUSenT9HTMw==">{
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "name": "Claude",
-            "alternateName": ["Claude.ai", "Claude by Anthropic"],
-            "url": "https://claude.com"
-          },
-          {
-            "@type": "Organization",
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com",
-            "logo": "https://claude.ai/images/claude_ogimage.png",
-            "sameAs": [
-              "https://x.com/AnthropicAI",
-              "https://www.linkedin.com/company/anthropic",
-              "https://www.youtube.com/@anthropic-ai"
-            ]
-          }
-        ]
-      }</script><script nonce="CC0x2Ys6J14BUSenT9HTMw==">!function(){try{performance.mark?.("rq_cache:preload_start");const e="keyval-store",o="keyval",r="react-query-cache",t=new Promise(t=>{if(!window.indexedDB)return void t(void 0);const c=indexedDB.open(e);c.onupgradeneeded=()=>{c.transaction?.abort()},c.onerror=()=>t(void 0),c.onsuccess=()=>{const a=c.result;if(!a.objectStoreNames.contains(o))return a.close(),indexedDB.deleteDatabase(e),void t(void 0);try{const e=a.transaction(o,"readonly").objectStore(o).get(r);e.onerror=()=>{a.close(),t(void 0)},e.onsuccess=()=>{a.close(),window.__PRELOADED_IDB_CACHE_RESULT__=e.result,t(e.result)}}catch{a.close(),t(void 0)}}});window.__PRELOADED_IDB_CACHE__=t,performance.measure?.("rq_cache:preload_exec",{start:"rq_cache:preload_start"})}catch{}}()</script><script type="module" crossorigin src="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/index-CYu_8WXE.js" nonce="CC0x2Ys6J14BUSenT9HTMw=="></script><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c2591c98b-C5xBBiTZ.css"><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-DHYwek-T.css"></head><body class="bg-bg-100 text-text-100 font-ui min-h-screen"><div id="root"></div><script nonce="CC0x2Ys6J14BUSenT9HTMw==">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='CC0x2Ys6J14BUSenT9HTMw==';d.innerHTML="window.__CF$cv$params={r:'a007c31c9d3fe2d8',t:'MTc3OTU3ODEyMQ=='};var a=document.createElement('script');a.nonce='CC0x2Ys6J14BUSenT9HTMw==';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f1117">
+<title>Chewie Health Tracker</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQ2hld2llIEhlYWx0aCBUcmFja2VyIiwic2hvcnRfbmFtZSI6IkNoZXdpZSIsInN0YXJ0X3VybCI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMGYxMTE3IiwidGhlbWVfY29sb3IiOiIjMGYxMTE3In0=">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0f1117;--card:#1e2330;--border:#2d3548;
+--text:#e2e8f0;--muted:#64748b;
+--green:#22c55e;--yellow:#eab308;--orange:#f97316;--red:#ef4444;
+--accent:#3b82f6;
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+#app{height:100%;display:flex;flex-direction:column}
+.screen{flex:1;overflow-y:auto;padding:16px 16px 100px;display:none}
+.screen.active{display:block}
+h1{font-size:20px;font-weight:700;margin-bottom:12px}
+h2{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--muted)}
+
+/* Offline pill */
+#offline-pill{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:var(--orange);color:#000;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;z-index:1000;display:none;white-space:nowrap}
+
+/* User selector overlay */
+#user-select-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px}
+#user-select-overlay h2{color:var(--text);font-size:22px;margin-bottom:8px}
+#user-select-overlay button{width:200px;padding:16px;font-size:18px;font-weight:600;border:2px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);cursor:pointer}
+#user-select-overlay button:active{background:var(--accent);border-color:var(--accent)}
+
+/* Bottom nav */
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--border);z-index:500;padding-bottom:env(safe-area-inset-bottom,0)}
+nav button{flex:1;padding:10px 0 8px;background:none;border:none;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px}
+nav button.active{color:var(--accent)}
+nav button svg{width:22px;height:22px}
+
+/* Cards */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
+
+/* Form elements */
+.field-group{margin-bottom:20px}
+.field-label{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.btn-group{display:flex;flex-wrap:wrap;gap:6px}
+.btn-option{padding:10px 14px;min-height:44px;border:2px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:14px;font-weight:500;cursor:pointer;transition:all .15s;flex:1;min-width:calc(50% - 3px);text-align:center;display:flex;align-items:center;justify-content:center}
+.btn-option:active{transform:scale(.97)}
+.btn-option.selected{border-color:var(--accent);background:rgba(59,130,246,.15);color:var(--accent)}
+.btn-option[data-severity="green"].selected{border-color:var(--green);background:rgba(34,197,94,.12);color:var(--green)}
+.btn-option[data-severity="yellow"].selected{border-color:var(--yellow);background:rgba(234,179,8,.12);color:var(--yellow)}
+.btn-option[data-severity="orange"].selected{border-color:var(--orange);background:rgba(249,115,22,.12);color:var(--orange)}
+.btn-option[data-severity="red"].selected{border-color:var(--red);background:rgba(239,68,68,.12);color:var(--red)}
+
+input[type="text"],input[type="number"],input[type="date"],textarea{width:100%;padding:12px;min-height:44px;border:2px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:15px;font-family:inherit;outline:none}
+input:focus,textarea:focus{border-color:var(--accent)}
+textarea{resize:vertical;min-height:80px}
+
+.btn-primary{width:100%;padding:14px;min-height:52px;border:none;border-radius:10px;background:var(--accent);color:#fff;font-size:16px;font-weight:700;cursor:pointer;transition:all .15s}
+.btn-primary:active{transform:scale(.98);opacity:.9}
+.btn-secondary{padding:10px 20px;min-height:44px;border:2px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:14px;font-weight:600;cursor:pointer}
+.btn-danger{background:var(--red);border-color:var(--red);color:#fff}
+
+/* Toast */
+#toast{position:fixed;top:60px;left:50%;transform:translateX(-50%) translateY(-100px);background:var(--green);color:#000;padding:10px 20px;border-radius:10px;font-weight:600;font-size:14px;z-index:3000;transition:transform .3s ease;pointer-events:none}
+#toast.show{transform:translateX(-50%) translateY(0)}
+
+/* History */
+.history-entry{cursor:pointer}
+.history-header{display:flex;justify-content:space-between;align-items:center}
+.history-date{font-weight:700;font-size:16px}
+.history-editor{font-size:12px;color:var(--muted)}
+.severity-dots{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.severity-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.history-details{display:none;margin-top:12px;border-top:1px solid var(--border);padding-top:12px}
+.history-details.open{display:block}
+.detail-row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px}
+.detail-label{color:var(--muted)}
+.detail-value{font-weight:500}
+.history-actions{display:flex;gap:8px;margin-top:12px}
+.history-actions button{flex:1}
+
+/* Charts */
+.chart-container{position:relative;height:250px;margin-bottom:16px}
+canvas{width:100%!important}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:1500;display:flex;align-items:flex-end;justify-content:center}
+.modal{background:var(--card);border-radius:16px 16px 0 0;width:100%;max-height:85vh;overflow-y:auto;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0))}
+.modal h2{margin-bottom:16px}
+.modal pre{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12px;white-space:pre-wrap;word-break:break-word;max-height:50vh;overflow-y:auto;color:var(--text);font-family:ui-monospace,monospace}
+.modal-actions{display:flex;gap:8px;margin-top:16px}
+.modal-actions button{flex:1}
+
+/* Current user display */
+#current-user-badge{position:fixed;top:12px;right:12px;font-size:11px;color:var(--muted);z-index:400;background:var(--card);padding:3px 10px;border-radius:12px;border:1px solid var(--border)}
+
+/* Date nav */
+.date-nav{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.date-nav input{flex:1}
+.date-nav button{min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+</style>
+</head>
+<body>
+
+<div id="offline-pill">Offline — syncing when connected</div>
+<div id="current-user-badge"></div>
+<div id="toast"></div>
+
+<!-- User Select Overlay -->
+<div id="user-select-overlay" style="display:none">
+  <h2>Who are you?</h2>
+  <button onclick="selectUser('Tricia')">Tricia</button>
+  <button onclick="selectUser('Sean')">Sean</button>
+</div>
+
+<div id="app">
+  <!-- LOG SCREEN -->
+  <div id="screen-log" class="screen active">
+    <h1>🐱 Chewie Daily Log</h1>
+    <div class="date-nav">
+      <button class="btn-secondary" onclick="shiftDate(-1)">◀</button>
+      <input type="date" id="log-date" onchange="onDateChange()">
+      <button class="btn-secondary" onclick="shiftDate(1)">▶</button>
+    </div>
+    <div id="log-form"></div>
+    <button class="btn-primary" onclick="saveLog()" style="margin-top:16px">💾 Save Entry</button>
+  </div>
+
+  <!-- HISTORY SCREEN -->
+  <div id="screen-history" class="screen">
+    <h1>📋 History</h1>
+    <div id="history-list"></div>
+  </div>
+
+  <!-- TRENDS SCREEN -->
+  <div id="screen-trends" class="screen">
+    <h1>📊 Trends</h1>
+    <div class="card"><h2>Weight (lbs)</h2><div class="chart-container"><canvas id="chart-weight"></canvas></div></div>
+    <div class="card"><h2>Energy Level</h2><div class="chart-container"><canvas id="chart-energy"></canvas></div></div>
+    <div class="card"><h2>Lymph Nodes</h2><div class="chart-container"><canvas id="chart-lymph"></canvas></div></div>
+    <div class="card"><h2>Patio Time vs Lymph Nodes</h2><div class="chart-container"><canvas id="chart-patio-lymph"></canvas></div></div>
+    <div class="card"><h2>Rock Licking</h2><div class="chart-container"><canvas id="chart-rock"></canvas></div></div>
+    <div class="card"><h2>Food Bowl</h2><div class="chart-container"><canvas id="chart-food"></canvas></div></div>
+  </div>
+
+  <!-- SUMMARY SCREEN -->
+  <div id="screen-summary" class="screen">
+    <h1>📝 Summary</h1>
+    <button class="btn-primary" onclick="generateVetSummary()">Generate Vet Summary (Last 30 Days)</button>
+    <button class="btn-secondary" onclick="exportCSV()" style="width:100%;margin-top:12px">📥 Export CSV</button>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav>
+    <button onclick="showScreen('log')" id="nav-log" class="active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      Log
+    </button>
+    <button onclick="showScreen('history')" id="nav-history">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+      History
+    </button>
+    <button onclick="showScreen('trends')" id="nav-trends">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Trends
+    </button>
+    <button onclick="showScreen('summary')" id="nav-summary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      Summary
+    </button>
+  </nav>
+</div>
+
+<!-- Modal container -->
+<div id="modal-container"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDMHHUcEHKJhj1u1icil-Q9XFg4LztvW38",
+  authDomain: "chewie-tracker.firebaseapp.com",
+  projectId: "chewie-tracker",
+  storageBucket: "chewie-tracker.firebasestorage.app",
+  messagingSenderId: "770615231011",
+  appId: "1:770615231011:web:6a59884576ad915a082796"
+};
+// ========================================
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Enable offline persistence
+db.enablePersistence({ synchronizeTabs: true }).catch(err => {
+  if (err.code === 'failed-precondition') console.warn('Persistence failed: multiple tabs open');
+  else if (err.code === 'unimplemented') console.warn('Persistence not supported in this browser');
+});
+
+const COLLECTION = 'chewie_logs';
+
+// ==================== FIELD DEFINITIONS ====================
+const SELECT_FIELDS = [
+  {
+    key: 'wetFoodBowl', label: 'Wet Food Bowl',
+    options: [
+      { text: 'Finished clean', severity: 'green' },
+      { text: 'Left some', severity: 'yellow' },
+      { text: 'Left most', severity: 'orange' },
+      { text: 'Refused', severity: 'red' }
+    ]
+  },
+  {
+    key: 'postDinnerActivity', label: 'Post-Dinner Activity',
+    options: [
+      { text: 'Full zoomies ~2hr', severity: 'green' },
+      { text: 'Moderate', severity: 'yellow' },
+      { text: 'Minimal', severity: 'orange' },
+      { text: 'None', severity: 'red' }
+    ]
+  },
+  {
+    key: 'coatQuality', label: 'Coat Quality',
+    options: [
+      { text: 'Soft and clean', severity: 'green' },
+      { text: 'Slight dullness', severity: 'yellow' },
+      { text: 'Dandruff present', severity: 'orange' },
+      { text: 'Greasy', severity: 'red' }
+    ]
+  },
+  {
+    key: 'breathOdor', label: 'Breath Odor',
+    options: [
+      { text: 'Normal', severity: 'green' },
+      { text: 'Slightly off', severity: 'yellow' },
+      { text: 'Noticeably bad', severity: 'orange' },
+      { text: 'Very bad', severity: 'red' }
+    ]
+  },
+  {
+    key: 'rockLicking', label: 'Rock or Mineral Licking',
+    options: [
+      { text: 'None', severity: 'green' },
+      { text: 'Once', severity: 'yellow' },
+      { text: 'Multiple times', severity: 'orange' },
+      { text: 'Constant', severity: 'red' }
+    ]
+  },
+  {
+    key: 'throatLymph', label: 'Throat Lymph Nodes',
+    options: [
+      { text: 'Not palpable', severity: 'green' },
+      { text: 'Slightly enlarged', severity: 'yellow' },
+      { text: 'Clearly enlarged', severity: 'orange' },
+      { text: 'Very enlarged', severity: 'red' }
+    ]
+  },
+  {
+    key: 'backKneeLymph', label: 'Back Knee Lymph Nodes',
+    options: [
+      { text: 'Not palpable', severity: 'green' },
+      { text: 'Slightly enlarged', severity: 'yellow' },
+      { text: 'Clearly enlarged', severity: 'orange' },
+      { text: 'Very enlarged', severity: 'red' }
+    ]
+  },
+  {
+    key: 'energyLevel', label: 'Energy Level',
+    options: [
+      { text: 'High', severity: 'green' },
+      { text: 'Normal', severity: 'yellow' },
+      { text: 'Low', severity: 'orange' },
+      { text: 'Very low', severity: 'red' }
+    ]
+  },
+  {
+    key: 'waterDrinking', label: 'Water Drinking',
+    options: [
+      { text: 'Normal', severity: 'green' },
+      { text: 'More than usual', severity: 'yellow' },
+      { text: 'Less than usual', severity: 'yellow' }
+    ]
+  }
+];
+
+const NUMBER_FIELDS = [
+  { key: 'weight', label: 'Weight (lbs)', step: '0.1' },
+  { key: 'patioTime', label: 'Patio Time (minutes)', step: '1' }
+];
+
+const TEXT_FIELDS = [
+  { key: 'generalNotes', label: 'General Notes' },
+  { key: 'newSymptoms', label: 'New or Unusual Symptoms' }
+];
+
+// Severity map for quick lookup
+const SEVERITY_MAP = {};
+SELECT_FIELDS.forEach(f => {
+  f.options.forEach(o => { SEVERITY_MAP[o.text] = o.severity; });
+});
+const SEVERITY_COLORS = { green: '#22c55e', yellow: '#eab308', orange: '#f97316', red: '#ef4444' };
+const SEVERITY_NUMERIC = { green: 0, yellow: 1, orange: 2, red: 3 };
+
+// ==================== STATE ====================
+let currentUser = localStorage.getItem('chewie_user') || null;
+let allLogs = {};  // keyed by date string
+let chartInstances = {};
+
+// ==================== USER SELECTION ====================
+function initUserSelect() {
+  if (!currentUser) {
+    document.getElementById('user-select-overlay').style.display = 'flex';
+  } else {
+    document.getElementById('user-select-overlay').style.display = 'none';
+    document.getElementById('current-user-badge').textContent = '👤 ' + currentUser;
+  }
+}
+
+function selectUser(name) {
+  currentUser = name;
+  localStorage.setItem('chewie_user', name);
+  document.getElementById('user-select-overlay').style.display = 'none';
+  document.getElementById('current-user-badge').textContent = '👤 ' + currentUser;
+}
+
+// ==================== NAVIGATION ====================
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  if (name === 'history') renderHistory();
+  if (name === 'trends') renderCharts();
+}
+
+// ==================== ONLINE/OFFLINE ====================
+window.addEventListener('online', () => { document.getElementById('offline-pill').style.display = 'none'; });
+window.addEventListener('offline', () => { document.getElementById('offline-pill').style.display = 'block'; });
+if (!navigator.onLine) document.getElementById('offline-pill').style.display = 'block';
+
+// ==================== TOAST ====================
+function showToast(msg, color) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = color || 'var(--green)';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ==================== DATE HELPERS ====================
+function todayStr() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+function getLogDate() { return document.getElementById('log-date').value; }
+function shiftDate(delta) {
+  const inp = document.getElementById('log-date');
+  const d = new Date(inp.value + 'T12:00:00');
+  d.setDate(d.getDate() + delta);
+  inp.value = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  onDateChange();
+}
+function onDateChange() { populateForm(getLogDate()); }
+
+// ==================== FORM BUILDING ====================
+function buildForm() {
+  const container = document.getElementById('log-form');
+  let html = '';
+
+  SELECT_FIELDS.forEach(field => {
+    html += `<div class="field-group"><div class="field-label">${field.label}</div><div class="btn-group">`;
+    field.options.forEach(opt => {
+      html += `<button type="button" class="btn-option" data-field="${field.key}" data-value="${opt.text}" data-severity="${opt.severity}" onclick="toggleOption(this)">${opt.text}</button>`;
+    });
+    html += `</div></div>`;
+  });
+
+  NUMBER_FIELDS.forEach(field => {
+    html += `<div class="field-group"><div class="field-label">${field.label}</div><input type="number" id="field-${field.key}" step="${field.step}" placeholder="${field.label}" inputmode="decimal"></div>`;
+  });
+
+  TEXT_FIELDS.forEach(field => {
+    html += `<div class="field-group"><div class="field-label">${field.label}</div><textarea id="field-${field.key}" placeholder="${field.label}" rows="3"></textarea></div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+function toggleOption(btn) {
+  const field = btn.dataset.field;
+  document.querySelectorAll(`.btn-option[data-field="${field}"]`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function populateForm(dateStr) {
+  // Clear all selections
+  document.querySelectorAll('.btn-option').forEach(b => b.classList.remove('selected'));
+  NUMBER_FIELDS.forEach(f => { document.getElementById('field-' + f.key).value = ''; });
+  TEXT_FIELDS.forEach(f => { document.getElementById('field-' + f.key).value = ''; });
+
+  // Check if data exists for this date
+  let data = allLogs[dateStr];
+
+  // If no data, try to pre-populate from previous day
+  if (!data) {
+    const prev = new Date(dateStr + 'T12:00:00');
+    prev.setDate(prev.getDate() - 1);
+    const prevStr = prev.getFullYear() + '-' + String(prev.getMonth()+1).padStart(2,'0') + '-' + String(prev.getDate()).padStart(2,'0');
+    data = allLogs[prevStr];
+    if (!data) return;
+    // Only pre-populate select fields from prev day, not text/notes
+    SELECT_FIELDS.forEach(field => {
+      if (data[field.key]) {
+        const btn = document.querySelector(`.btn-option[data-field="${field.key}"][data-value="${data[field.key]}"]`);
+        if (btn) btn.classList.add('selected');
+      }
+    });
+    return;
+  }
+
+  // Populate from existing data
+  SELECT_FIELDS.forEach(field => {
+    if (data[field.key]) {
+      const btn = document.querySelector(`.btn-option[data-field="${field.key}"][data-value="${data[field.key]}"]`);
+      if (btn) btn.classList.add('selected');
+    }
+  });
+  NUMBER_FIELDS.forEach(f => {
+    if (data[f.key] !== undefined && data[f.key] !== null && data[f.key] !== '') {
+      document.getElementById('field-' + f.key).value = data[f.key];
+    }
+  });
+  TEXT_FIELDS.forEach(f => {
+    if (data[f.key]) document.getElementById('field-' + f.key).value = data[f.key];
+  });
+}
+
+function gatherFormData() {
+  const data = {};
+  SELECT_FIELDS.forEach(field => {
+    const sel = document.querySelector(`.btn-option[data-field="${field.key}"].selected`);
+    data[field.key] = sel ? sel.dataset.value : '';
+  });
+  NUMBER_FIELDS.forEach(f => {
+    const v = document.getElementById('field-' + f.key).value;
+    data[f.key] = v !== '' ? parseFloat(v) : null;
+  });
+  TEXT_FIELDS.forEach(f => {
+    data[f.key] = document.getElementById('field-' + f.key).value.trim();
+  });
+  return data;
+}
+
+// ==================== SAVE ====================
+async function saveLog() {
+  const dateStr = getLogDate();
+  if (!dateStr) { showToast('Select a date', 'var(--red)'); return; }
+  const data = gatherFormData();
+  data.isoDate = dateStr;
+  data.lastEditedBy = currentUser;
+  data.updatedAt = firebase.firestore.FieldValue.serverTimestamp();
+
+  try {
+    await db.collection(COLLECTION).doc(dateStr).set(data, { merge: true });
+    showToast('Saved ✓', 'var(--green)');
+  } catch (e) {
+    console.error('Save error:', e);
+    showToast('Saved offline — will sync', 'var(--orange)');
+  }
+}
+
+// ==================== REAL-TIME LISTENER ====================
+function startListener() {
+  db.collection(COLLECTION).orderBy('isoDate', 'desc').onSnapshot(snapshot => {
+    snapshot.docChanges().forEach(change => {
+      const data = change.doc.data();
+      const id = change.doc.id;
+      if (change.type === 'removed') {
+        delete allLogs[id];
+      } else {
+        allLogs[id] = data;
+      }
+    });
+    // Re-render current view if needed
+    const activeScreen = document.querySelector('.screen.active');
+    if (activeScreen && activeScreen.id === 'screen-history') renderHistory();
+    if (activeScreen && activeScreen.id === 'screen-trends') renderCharts();
+  }, err => {
+    console.error('Snapshot error:', err);
+  });
+}
+
+// ==================== HISTORY ====================
+function renderHistory() {
+  const container = document.getElementById('history-list');
+  const dates = Object.keys(allLogs).sort().reverse();
+  if (dates.length === 0) {
+    container.innerHTML = '<div class="card" style="text-align:center;color:var(--muted)">No entries yet. Start logging!</div>';
+    return;
+  }
+
+  let html = '';
+  dates.forEach(dateStr => {
+    const entry = allLogs[dateStr];
+    const dots = getDotsHTML(entry);
+    const editor = entry.lastEditedBy || 'Unknown';
+    html += `<div class="card history-entry" onclick="toggleDetails('${dateStr}')">
+      <div class="history-header">
+        <span class="history-date">${formatDateDisplay(dateStr)}</span>
+        <span class="history-editor">✏️ ${editor}</span>
+      </div>
+      <div class="severity-dots">${dots}</div>
+      <div class="history-details" id="details-${dateStr}">
+        ${renderEntryDetails(entry)}
+        <div class="history-actions">
+          <button class="btn-secondary" onclick="event.stopPropagation();editEntry('${dateStr}')">Edit</button>
+          <button class="btn-secondary btn-danger" onclick="event.stopPropagation();deleteEntry('${dateStr}')">Delete</button>
+        </div>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+function getDotsHTML(entry) {
+  let html = '';
+  SELECT_FIELDS.forEach(f => {
+    const val = entry[f.key];
+    if (val) {
+      const sev = SEVERITY_MAP[val] || 'green';
+      html += `<div class="severity-dot" style="background:${SEVERITY_COLORS[sev]}" title="${f.label}: ${val}"></div>`;
+    }
+  });
+  return html;
+}
+
+function formatDateDisplay(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function renderEntryDetails(entry) {
+  let html = '';
+  SELECT_FIELDS.forEach(f => {
+    const val = entry[f.key];
+    if (val) {
+      const sev = SEVERITY_MAP[val] || 'green';
+      html += `<div class="detail-row"><span class="detail-label">${f.label}</span><span class="detail-value" style="color:${SEVERITY_COLORS[sev]}">${val}</span></div>`;
+    }
+  });
+  NUMBER_FIELDS.forEach(f => {
+    if (entry[f.key] !== null && entry[f.key] !== undefined) {
+      html += `<div class="detail-row"><span class="detail-label">${f.label}</span><span class="detail-value">${entry[f.key]}</span></div>`;
+    }
+  });
+  TEXT_FIELDS.forEach(f => {
+    if (entry[f.key]) {
+      html += `<div class="detail-row" style="flex-direction:column"><span class="detail-label">${f.label}</span><span class="detail-value" style="margin-top:4px">${escapeHtml(entry[f.key])}</span></div>`;
+    }
+  });
+  return html;
+}
+
+function toggleDetails(dateStr) {
+  const el = document.getElementById('details-' + dateStr);
+  el.classList.toggle('open');
+}
+
+function editEntry(dateStr) {
+  document.getElementById('log-date').value = dateStr;
+  populateForm(dateStr);
+  showScreen('log');
+}
+
+async function deleteEntry(dateStr) {
+  if (!confirm('Delete entry for ' + formatDateDisplay(dateStr) + '?')) return;
+  try {
+    await db.collection(COLLECTION).doc(dateStr).delete();
+    delete allLogs[dateStr];
+    renderHistory();
+    showToast('Deleted', 'var(--red)');
+  } catch (e) {
+    console.error('Delete error:', e);
+    showToast('Delete failed', 'var(--red)');
+  }
+}
+
+// ==================== CHARTS ====================
+function renderCharts() {
+  const dates = Object.keys(allLogs).sort();
+  if (dates.length < 2) return;
+
+  const labels = dates.map(d => {
+    const dt = new Date(d + 'T12:00:00');
+    return (dt.getMonth()+1) + '/' + dt.getDate();
+  });
+
+  // Destroy existing charts
+  Object.values(chartInstances).forEach(c => c.destroy());
+  chartInstances = {};
+
+  const baseOpts = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { labels: { color: '#64748b', font: { size: 11 } } } },
+    scales: {
+      x: { ticks: { color: '#64748b', font: { size: 10 }, maxRotation: 45 }, grid: { color: 'rgba(45,53,72,0.5)' } },
+      y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: 'rgba(45,53,72,0.5)' } }
+    }
+  };
+
+  // Weight
+  const weights = dates.map(d => allLogs[d].weight);
+  const hasWeight = weights.some(w => w !== null && w !== undefined);
+  if (hasWeight) {
+    chartInstances.weight = new Chart(document.getElementById('chart-weight'), {
+      type: 'line',
+      data: { labels, datasets: [{ label: 'Weight (lbs)', data: weights, borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', fill: true, tension: 0.3, spanGaps: true, pointRadius: 3 }] },
+      options: { ...baseOpts }
+    });
+  }
+
+  // Energy
+  const energyMap = { 'High': 3, 'Normal': 2, 'Low': 1, 'Very low': 0 };
+  const energies = dates.map(d => energyMap[allLogs[d].energyLevel] ?? null);
+  chartInstances.energy = new Chart(document.getElementById('chart-energy'), {
+    type: 'line',
+    data: { labels, datasets: [{ label: 'Energy (0-3)', data: energies, borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, spanGaps: true, pointRadius: 3 }] },
+    options: { ...baseOpts, scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, min: 0, max: 3, ticks: { ...baseOpts.scales.y.ticks, stepSize: 1, callback: v => ['Very low','Low','Normal','High'][v] || v } } } }
+  });
+
+  // Lymph nodes
+  const lymphMap = { 'Not palpable': 0, 'Slightly enlarged': 1, 'Clearly enlarged': 2, 'Very enlarged': 3 };
+  const throat = dates.map(d => lymphMap[allLogs[d].throatLymph] ?? null);
+  const knee = dates.map(d => lymphMap[allLogs[d].backKneeLymph] ?? null);
+  chartInstances.lymph = new Chart(document.getElementById('chart-lymph'), {
+    type: 'line',
+    data: { labels, datasets: [
+      { label: 'Throat', data: throat, borderColor: '#f97316', tension: 0.3, spanGaps: true, pointRadius: 3 },
+      { label: 'Back Knee', data: knee, borderColor: '#ef4444', tension: 0.3, spanGaps: true, pointRadius: 3 }
+    ]},
+    options: { ...baseOpts, scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, min: 0, max: 3, ticks: { ...baseOpts.scales.y.ticks, stepSize: 1, callback: v => ['None','Slight','Clear','Very'][v] || v } } } }
+  });
+
+  // Patio time vs lymph
+  const patio = dates.map(d => allLogs[d].patioTime ?? null);
+  const avgLymph = dates.map((d, i) => {
+    const t = throat[i], k = knee[i];
+    if (t === null && k === null) return null;
+    if (t === null) return k;
+    if (k === null) return t;
+    return (t + k) / 2;
+  });
+  chartInstances.patioLymph = new Chart(document.getElementById('chart-patio-lymph'), {
+    type: 'line',
+    data: { labels, datasets: [
+      { label: 'Patio (min)', data: patio, borderColor: '#22c55e', yAxisID: 'y', tension: 0.3, spanGaps: true, pointRadius: 3 },
+      { label: 'Avg Lymph', data: avgLymph, borderColor: '#ef4444', yAxisID: 'y1', tension: 0.3, spanGaps: true, pointRadius: 3 }
+    ]},
+    options: { ...baseOpts, scales: {
+      x: baseOpts.scales.x,
+      y: { ...baseOpts.scales.y, position: 'left', title: { display: true, text: 'Minutes', color: '#64748b' } },
+      y1: { ...baseOpts.scales.y, position: 'right', min: 0, max: 3, grid: { drawOnChartArea: false }, title: { display: true, text: 'Lymph', color: '#64748b' }, ticks: { ...baseOpts.scales.y.ticks, stepSize: 1 } }
+    }}
+  });
+
+  // Rock licking
+  const rockMap = { 'None': 0, 'Once': 1, 'Multiple times': 2, 'Constant': 3 };
+  const rocks = dates.map(d => rockMap[allLogs[d].rockLicking] ?? 0);
+  const rockColors = dates.map(d => {
+    const sev = SEVERITY_MAP[allLogs[d].rockLicking] || 'green';
+    return SEVERITY_COLORS[sev];
+  });
+  chartInstances.rock = new Chart(document.getElementById('chart-rock'), {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Rock Licking', data: rocks, backgroundColor: rockColors, borderRadius: 4 }] },
+    options: { ...baseOpts, scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, min: 0, max: 3, ticks: { ...baseOpts.scales.y.ticks, stepSize: 1, callback: v => ['None','Once','Multi','Constant'][v] || v } } } }
+  });
+
+  // Food bowl
+  const foodMap = { 'Finished clean': 3, 'Left some': 2, 'Left most': 1, 'Refused': 0 };
+  const foods = dates.map(d => foodMap[allLogs[d].wetFoodBowl] ?? null);
+  chartInstances.food = new Chart(document.getElementById('chart-food'), {
+    type: 'line',
+    data: { labels, datasets: [{ label: 'Food Completion', data: foods, borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, spanGaps: true, pointRadius: 3 }] },
+    options: { ...baseOpts, scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, min: 0, max: 3, ticks: { ...baseOpts.scales.y.ticks, stepSize: 1, callback: v => ['Refused','Left most','Left some','Clean'][v] || v } } } }
+  });
+}
+
+// ==================== VET SUMMARY ====================
+function generateVetSummary() {
+  const now = new Date();
+  const thirtyAgo = new Date(now);
+  thirtyAgo.setDate(thirtyAgo.getDate() - 30);
+  const cutoff = thirtyAgo.getFullYear() + '-' + String(thirtyAgo.getMonth()+1).padStart(2,'0') + '-' + String(thirtyAgo.getDate()).padStart(2,'0');
+
+  const dates = Object.keys(allLogs).filter(d => d >= cutoff).sort();
+  if (dates.length === 0) {
+    showToast('No data in last 30 days', 'var(--red)');
+    return;
+  }
+
+  const entries = dates.map(d => ({ date: d, ...allLogs[d] }));
+  let lines = [];
+
+  lines.push('CHEWIE HEALTH SUMMARY');
+  lines.push('='.repeat(40));
+  lines.push(`Date Range: ${formatDateDisplay(dates[0])} — ${formatDateDisplay(dates[dates.length - 1])}`);
+  lines.push(`Entries Logged: ${dates.length}`);
+  lines.push('');
+
+  // Weight
+  const weights = entries.filter(e => e.weight !== null && e.weight !== undefined);
+  if (weights.length > 0) {
+    const first = weights[0].weight;
+    const last = weights[weights.length - 1].weight;
+    const diff = last - first;
+    const trend = diff > 0 ? '↑ gaining' : diff < 0 ? '↓ losing' : '→ stable';
+    lines.push(`WEIGHT: ${first} lbs → ${last} lbs (${trend}, ${diff > 0 ? '+' : ''}${diff.toFixed(1)} lbs)`);
+  } else {
+    lines.push('WEIGHT: No data');
+  }
+  lines.push('');
+
+  // Energy
+  const energyMap = { 'High': 3, 'Normal': 2, 'Low': 1, 'Very low': 0 };
+  const energyVals = entries.filter(e => e.energyLevel).map(e => energyMap[e.energyLevel]);
+  if (energyVals.length > 0) {
+    const avg = (energyVals.reduce((a, b) => a + b, 0) / energyVals.length).toFixed(1);
+    const veryLowDays = entries.filter(e => e.energyLevel === 'Very low').map(e => e.date);
+    lines.push(`ENERGY: Average ${avg}/3`);
+    if (veryLowDays.length > 0) lines.push(`  ⚠ Very low days: ${veryLowDays.join(', ')}`);
+  }
+  lines.push('');
+
+  // Lymph nodes
+  const lymphMap = { 'Not palpable': 0, 'Slightly enlarged': 1, 'Clearly enlarged': 2, 'Very enlarged': 3 };
+  const throatData = entries.filter(e => e.throatLymph);
+  const kneeData = entries.filter(e => e.backKneeLymph);
+  lines.push('LYMPH NODES:');
+  if (throatData.length > 0) {
+    const avg = (throatData.map(e => lymphMap[e.throatLymph]).reduce((a, b) => a + b, 0) / throatData.length).toFixed(1);
+    const veryDays = throatData.filter(e => e.throatLymph === 'Very enlarged').map(e => e.date);
+    lines.push(`  Throat: avg ${avg}/3${veryDays.length > 0 ? ' ⚠ Very enlarged: ' + veryDays.join(', ') : ''}`);
+  }
+  if (kneeData.length > 0) {
+    const avg = (kneeData.map(e => lymphMap[e.backKneeLymph]).reduce((a, b) => a + b, 0) / kneeData.length).toFixed(1);
+    const veryDays = kneeData.filter(e => e.backKneeLymph === 'Very enlarged').map(e => e.date);
+    lines.push(`  Back knee: avg ${avg}/3${veryDays.length > 0 ? ' ⚠ Very enlarged: ' + veryDays.join(', ') : ''}`);
+  }
+  lines.push('');
+
+  // Patio time
+  const patioVals = entries.filter(e => e.patioTime !== null && e.patioTime !== undefined);
+  if (patioVals.length > 0) {
+    const avg = (patioVals.reduce((a, b) => a + b.patioTime, 0) / patioVals.length).toFixed(0);
+    lines.push(`PATIO TIME: Avg ${avg} min/day (${patioVals.length} days logged)`);
+  }
+  lines.push('');
+
+  // Rock licking
+  const rockEntries = entries.filter(e => e.rockLicking);
+  if (rockEntries.length > 0) {
+    const counts = {};
+    rockEntries.forEach(e => { counts[e.rockLicking] = (counts[e.rockLicking] || 0) + 1; });
+    lines.push('ROCK LICKING:');
+    Object.entries(counts).forEach(([k, v]) => { lines.push(`  ${k}: ${v} days`); });
+  }
+  lines.push('');
+
+  // Notes
+  const notes = entries.filter(e => e.generalNotes || e.newSymptoms);
+  if (notes.length > 0) {
+    lines.push('NOTES:');
+    notes.forEach(e => {
+      if (e.generalNotes) lines.push(`  [${e.date}] ${e.generalNotes}`);
+      if (e.newSymptoms) lines.push(`  [${e.date}] NEW: ${e.newSymptoms}`);
+    });
+  }
+  lines.push('');
+
+  // Flare flags
+  const flareDays = [];
+  entries.forEach(e => {
+    let redCount = 0;
+    SELECT_FIELDS.forEach(f => {
+      if (e[f.key] && SEVERITY_MAP[e[f.key]] === 'red') redCount++;
+    });
+    if (redCount >= 2) flareDays.push(e.date);
+  });
+  if (flareDays.length > 0) {
+    lines.push(`⚠ POSSIBLE FLARE INDICATORS ON: ${flareDays.join(', ')}`);
+    lines.push('  (Days with 2+ red-level readings)');
+  }
+
+  const text = lines.join('\n');
+  showModal('Vet Summary — Last 30 Days', text);
+}
+
+function showModal(title, text) {
+  const container = document.getElementById('modal-container');
+  container.innerHTML = `<div class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <h2>${title}</h2>
+      <pre id="modal-text">${escapeHtml(text)}</pre>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="copyModalText()">📋 Copy</button>
+        <button class="btn-secondary" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function closeModal(e) {
+  if (e && e.target && !e.target.classList.contains('modal-overlay')) return;
+  document.getElementById('modal-container').innerHTML = '';
+}
+
+function copyModalText() {
+  const text = document.getElementById('modal-text').textContent;
+  navigator.clipboard.writeText(text).then(() => showToast('Copied!', 'var(--green)')).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('Copied!', 'var(--green)');
+  });
+}
+
+// ==================== CSV EXPORT ====================
+function exportCSV() {
+  const dates = Object.keys(allLogs).sort();
+  if (dates.length === 0) { showToast('No data to export', 'var(--red)'); return; }
+
+  const allKeys = ['isoDate'];
+  SELECT_FIELDS.forEach(f => allKeys.push(f.key));
+  NUMBER_FIELDS.forEach(f => allKeys.push(f.key));
+  TEXT_FIELDS.forEach(f => allKeys.push(f.key));
+  allKeys.push('lastEditedBy');
+
+  const header = allKeys.join(',');
+  const rows = dates.map(d => {
+    const e = allLogs[d];
+    return allKeys.map(k => {
+      let v = e[k] ?? '';
+      if (typeof v === 'string' && (v.includes(',') || v.includes('"') || v.includes('\n'))) {
+        v = '"' + v.replace(/"/g, '""') + '"';
+      }
+      return v;
+    }).join(',');
+  });
+
+  const csv = header + '\n' + rows.join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'chewie_health_data.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('CSV downloaded', 'var(--green)');
+}
+
+// ==================== UTILS ====================
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// ==================== INIT ====================
+document.addEventListener('DOMContentLoaded', () => {
+  initUserSelect();
+  document.getElementById('log-date').value = todayStr();
+  buildForm();
+  startListener();
+  // Initial populate after a short delay for Firestore to load
+  setTimeout(() => populateForm(todayStr()), 1000);
+});
+</script>
+</body>
+</html>
