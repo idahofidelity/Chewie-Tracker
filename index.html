@@ -35,6 +35,8 @@ body{font-family:'SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-
 #app{height:100%;display:flex;flex-direction:column}
 .screen{flex:1;overflow-y:auto;padding:14px 14px 90px;display:none;-webkit-overflow-scrolling:touch}
 .screen.active{display:block}
+#screen-chat{padding:0}
+#screen-chat.active{display:flex;flex-direction:column}
 h1{font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:-0.3px}
 h2{font-size:12px;font-weight:700;margin-bottom:10px;color:var(--text2);text-transform:uppercase;letter-spacing:0.08em}
 
@@ -470,14 +472,14 @@ canvas{width:100%!important}
 </div>
 
   <!-- CHAT SCREEN -->
-  <div id="screen-chat" class="screen">
-    <h1>🤖 Ask About Chewie</h1>
-    <div id="chat-messages" style="display:flex;flex-direction:column;gap:12px;margin-bottom:14px"></div>
-    <div style="display:flex;gap:8px;position:sticky;bottom:80px">
-      <textarea id="chat-input" placeholder="Ask anything about Chewie..." rows="2" style="flex:1;resize:none" onkeydown="chatKeydown(event)"></textarea>
-      <button class="btn-primary" onclick="sendChat()" style="width:56px;min-height:56px;padding:0;font-size:20px">↑</button>
+  <div id="screen-chat" class="screen" style="display:none;flex-direction:column;padding-bottom:0">
+    <h1 style="flex-shrink:0;padding:14px 14px 0">🤖 Ask About Chewie</h1>
+    <div id="chat-suggestions" style="flex-shrink:0;display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px"></div>
+    <div id="chat-messages" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding:0 14px 14px;-webkit-overflow-scrolling:touch"></div>
+    <div style="flex-shrink:0;display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0));background:var(--card);border-top:1px solid var(--border)">
+      <textarea id="chat-input" placeholder="Ask anything about Chewie..." rows="2" style="flex:1;resize:none;min-height:44px" onkeydown="chatKeydown(event)"></textarea>
+      <button class="btn-primary" onclick="sendChat()" style="width:52px;min-height:52px;padding:0;font-size:22px;flex-shrink:0">↑</button>
     </div>
-    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px" id="chat-suggestions"></div>
   </div>
 
 <div id="modal-container"></div>
@@ -606,9 +608,11 @@ function selectUser(name) {
 
 // NAV
 function showScreen(name) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-  document.getElementById('screen-' + name).classList.add('active');
+  const screen = document.getElementById('screen-' + name);
+  screen.style.display = name === 'chat' ? 'flex' : 'block';
+  screen.classList.add('active');
   document.getElementById('nav-' + name).classList.add('active');
   if (name === 'history') renderHistory();
   if (name === 'trends') renderCharts();
