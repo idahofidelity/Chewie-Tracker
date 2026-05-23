@@ -609,6 +609,7 @@ function selectUser(name) {
 
 // NAV
 function showScreen(name) {
+  alert('showScreen called: ' + name);
   document.querySelectorAll('.screen').forEach(s => {
     s.classList.remove('active');
     s.style.display = 'none';
