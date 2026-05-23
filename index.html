@@ -207,7 +207,7 @@ canvas{width:100%!important}
 <div id="app">
 
   <!-- LOG SCREEN -->
-  <div id="screen-log" class="screen active">
+  <div id="screen-log" class="screen active" style="display:block">
     <h1>🐱 Daily Log</h1>
     <div class="date-nav">
       <button class="btn-secondary" onclick="shiftDate(-1)">◀</button>
@@ -609,9 +609,19 @@ function selectUser(name) {
 
 // NAV
 function showScreen(name) {
-  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display = ''; });
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+    s.style.display = 'none';
+  });
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-  document.getElementById('screen-' + name).classList.add('active');
+  const scr = document.getElementById('screen-' + name);
+  scr.classList.add('active');
+  scr.style.display = name === 'chat' ? 'flex' : 'block';
+  if (name === 'chat') {
+    scr.style.flexDirection = 'column';
+    scr.style.height = 'calc(100vh - 56px)';
+    scr.style.overflow = 'hidden';
+  }
   document.getElementById('nav-' + name).classList.add('active');
   if (name === 'history') renderHistory();
   if (name === 'trends') renderCharts();
