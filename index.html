@@ -35,8 +35,8 @@ body{font-family:'SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-
 #app{height:100%;display:flex;flex-direction:column}
 .screen{flex:1;overflow-y:auto;padding:14px 14px 90px;display:none;-webkit-overflow-scrolling:touch}
 .screen.active{display:block}
-#screen-chat{padding:0}
-#screen-chat.active{display:flex;flex-direction:column}
+#screen-chat{padding:0;overflow:hidden}
+#screen-chat.active{display:flex!important;flex-direction:column;height:calc(100vh - 56px)}
 h1{font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:-0.3px}
 h2{font-size:12px;font-weight:700;margin-bottom:10px;color:var(--text2);text-transform:uppercase;letter-spacing:0.08em}
 
@@ -472,7 +472,7 @@ canvas{width:100%!important}
 </div>
 
   <!-- CHAT SCREEN -->
-  <div id="screen-chat" class="screen" style="display:none;flex-direction:column;padding-bottom:0">
+  <div id="screen-chat" class="screen">
     <h1 style="flex-shrink:0;padding:14px 14px 0">🤖 Ask About Chewie</h1>
     <div id="chat-suggestions" style="flex-shrink:0;display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px"></div>
     <div id="chat-messages" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding:0 14px 14px;-webkit-overflow-scrolling:touch"></div>
@@ -608,11 +608,9 @@ function selectUser(name) {
 
 // NAV
 function showScreen(name) {
-  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display = ''; });
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-  const screen = document.getElementById('screen-' + name);
-  screen.style.display = name === 'chat' ? 'flex' : 'block';
-  screen.classList.add('active');
+  document.getElementById('screen-' + name).classList.add('active');
   document.getElementById('nav-' + name).classList.add('active');
   if (name === 'history') renderHistory();
   if (name === 'trends') renderCharts();
