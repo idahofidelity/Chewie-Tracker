@@ -616,12 +616,14 @@ function showScreen(name) {
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   const scr = document.getElementById('screen-' + name);
   scr.classList.add('active');
-  scr.style.display = name === 'chat' ? 'flex' : 'block';
   if (name === 'chat') {
+    scr.style.display = 'flex';
     scr.style.flexDirection = 'column';
-    scr.style.height = 'calc(100vh - 56px)';
     scr.style.overflow = 'hidden';
-    alert('chat display set to: ' + scr.style.display + ' children: ' + scr.children.length);
+    scr.style.padding = '0';
+    scr.style.height = '100%';
+  } else {
+    scr.style.display = 'block';
   }
   document.getElementById('nav-' + name).classList.add('active');
   if (name === 'history') renderHistory();
