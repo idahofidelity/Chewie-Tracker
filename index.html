@@ -473,13 +473,15 @@ canvas{width:100%!important}
 </div>
 
   <!-- CHAT SCREEN -->
-  <div id="screen-chat" class="screen">
-    <h1 style="flex-shrink:0;padding:14px 14px 0">🤖 Ask About Chewie</h1>
-    <div id="chat-suggestions" style="flex-shrink:0;display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px"></div>
-    <div id="chat-messages" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding:0 14px 14px;-webkit-overflow-scrolling:touch"></div>
-    <div style="flex-shrink:0;display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0));background:var(--card);border-top:1px solid var(--border)">
-      <textarea id="chat-input" placeholder="Ask anything about Chewie..." rows="2" style="flex:1;resize:none;min-height:44px" onkeydown="chatKeydown(event)"></textarea>
-      <button class="btn-primary" onclick="sendChat()" style="width:52px;min-height:52px;padding:0;font-size:22px;flex-shrink:0">↑</button>
+  <div id="screen-chat" class="screen" style="padding:0;position:relative">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column">
+      <div style="padding:14px 14px 0;flex-shrink:0"><h1>🤖 Ask About Chewie</h1></div>
+      <div id="chat-suggestions" style="flex-shrink:0;display:flex;flex-wrap:wrap;gap:6px;padding:6px 14px"></div>
+      <div id="chat-messages" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:10px 14px;min-height:0"></div>
+      <div style="flex-shrink:0;display:flex;gap:8px;padding:10px 14px;background:var(--card);border-top:1px solid var(--border)">
+        <textarea id="chat-input" placeholder="Ask anything about Chewie..." rows="2" style="flex:1;resize:none;min-height:44px" onkeydown="chatKeydown(event)"></textarea>
+        <button class="btn-primary" onclick="sendChat()" style="width:52px;min-height:52px;padding:0;font-size:22px;flex-shrink:0">↑</button>
+      </div>
     </div>
   </div>
 
