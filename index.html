@@ -2,34 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0a0d14">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
 <title>Chewie Health Tracker</title>
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQ2hld2llIEhlYWx0aCBUcmFja2VyIiwic2hvcnRfbmFtZSI6IkNoZXdpZSIsInN0YXJ0X3VybCI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMGExMDE0IiwidGhlbWVfY29sb3IiOiIjMGEwZDE0In0=">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0d14;
-  --bg2:#0f1320;
-  --card:#141824;
-  --card2:#1a1f2e;
-  --border:#232a3d;
-  --border2:#2d3650;
-  --text:#e8edf5;
-  --text2:#94a3b8;
-  --muted:#4a5568;
-  --green:#22c55e;
-  --yellow:#eab308;
-  --orange:#f97316;
-  --red:#ef4444;
-  --blue:#3b82f6;
-  --purple:#a855f7;
-  --accent:#3b82f6;
-  --card2:#1a1f2e;
+  --bg:#0a0d14;--bg2:#0f1320;--card:#141824;--card2:#1a1f2e;
+  --border:#232a3d;--border2:#2d3650;
+  --text:#e8edf5;--text2:#94a3b8;--muted:#4a5568;
+  --green:#22c55e;--yellow:#eab308;--orange:#f97316;--red:#ef4444;
+  --blue:#3b82f6;--purple:#a855f7;--accent:#3b82f6;
 }
 html,body{height:100%;overflow:hidden}
 body{font-family:'SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -38,39 +24,23 @@ body{font-family:'SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-
 .screen.active{display:block}
 h1{font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:-0.3px}
 h2{font-size:12px;font-weight:700;margin-bottom:10px;color:var(--text2);text-transform:uppercase;letter-spacing:0.08em}
-
-/* Offline pill */
 #offline-pill{position:fixed;top:10px;left:50%;transform:translateX(-50%);background:var(--orange);color:#000;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;z-index:1000;display:none;white-space:nowrap}
-
-/* User selector overlay */
 #user-select-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px}
 #user-select-overlay h2{color:var(--text);font-size:20px;margin-bottom:4px;text-transform:none;letter-spacing:0}
 #user-select-overlay button{width:180px;padding:14px;font-size:16px;font-weight:600;border:1.5px solid var(--border2);border-radius:12px;background:var(--card);color:var(--text);cursor:pointer}
-#user-select-overlay button:active{background:var(--accent);border-color:var(--accent)}
-
-/* Bottom nav */
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--border);z-index:500;padding-bottom:env(safe-area-inset-bottom,0)}
 nav button{flex:1;padding:8px 0 6px;background:none;border:none;color:var(--muted);font-size:10px;font-weight:600;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
 nav button.active{color:var(--accent)}
 nav button svg{width:20px;height:20px}
-
-/* Cards */
 .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px}
 .card-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.dot-red{background:var(--red)}
-.dot-orange{background:var(--orange)}
-.dot-yellow{background:var(--yellow)}
-.dot-green{background:var(--green)}
-.dot-blue{background:var(--blue)}
-.dot-purple{background:var(--purple)}
-
-/* Form elements */
+.dot-red{background:var(--red)}.dot-orange{background:var(--orange)}.dot-yellow{background:var(--yellow)}
+.dot-green{background:var(--green)}.dot-blue{background:var(--blue)}.dot-purple{background:var(--purple)}
 .field-group{margin-bottom:16px}
 .field-label{font-size:11px;font-weight:700;color:var(--text2);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em}
 .btn-group{display:flex;flex-wrap:wrap;gap:5px}
-.btn-option{padding:9px 12px;min-height:42px;border:1.5px solid var(--border);border-radius:8px;background:var(--card2);color:var(--text);font-size:13px;font-weight:500;cursor:pointer;transition:all .12s;flex:1;min-width:calc(50% - 3px);text-align:center;display:flex;align-items:center;justify-content:center}
-.btn-option:active{transform:scale(.97)}
+.btn-option{padding:9px 12px;min-height:42px;border:1.5px solid var(--border);border-radius:8px;background:var(--card2);color:var(--text);font-size:13px;font-weight:500;cursor:pointer;flex:1;min-width:calc(50% - 3px);text-align:center;display:flex;align-items:center;justify-content:center}
 .btn-option.selected{border-color:var(--accent);background:rgba(59,130,246,.15);color:var(--accent)}
 .btn-option[data-severity="green"].selected{border-color:var(--green);background:rgba(34,197,94,.12);color:var(--green)}
 .btn-option[data-severity="yellow"].selected{border-color:var(--yellow);background:rgba(234,179,8,.12);color:var(--yellow)}
@@ -80,15 +50,10 @@ input[type="text"],input[type="number"],input[type="date"],textarea{width:100%;p
 input:focus,textarea:focus{border-color:var(--accent)}
 textarea{resize:vertical;min-height:72px}
 .btn-primary{width:100%;padding:13px;min-height:48px;border:none;border-radius:10px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer}
-.btn-primary:active{opacity:.85}
 .btn-secondary{padding:9px 16px;min-height:40px;border:1.5px solid var(--border);border-radius:8px;background:var(--card2);color:var(--text);font-size:13px;font-weight:600;cursor:pointer}
 .btn-danger{background:rgba(239,68,68,.15);border-color:var(--red);color:var(--red)}
-
-/* Toast */
 #toast{position:fixed;top:50px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--green);color:#000;padding:9px 18px;border-radius:10px;font-weight:700;font-size:13px;z-index:3000;transition:transform .25s ease;pointer-events:none}
 #toast.show{transform:translateX(-50%) translateY(0)}
-
-/* History */
 .history-entry{cursor:pointer}
 .history-header{display:flex;justify-content:space-between;align-items:center}
 .history-date{font-weight:700;font-size:15px}
@@ -102,33 +67,25 @@ textarea{resize:vertical;min-height:72px}
 .detail-value{font-weight:500}
 .history-actions{display:flex;gap:8px;margin-top:10px}
 .history-actions button{flex:1}
-
-/* Charts */
 .chart-container{position:relative;height:220px;margin-bottom:10px}
 canvas{width:100%!important}
-
-/* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:1500;display:flex;align-items:flex-end;justify-content:center}
 .modal{background:var(--card);border-radius:16px 16px 0 0;width:100%;max-height:85vh;overflow-y:auto;padding:18px 14px calc(18px + env(safe-area-inset-bottom,0))}
 .modal h2{margin-bottom:14px;font-size:16px;text-transform:none;letter-spacing:0;color:var(--text)}
 .modal pre{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:11px;white-space:pre-wrap;word-break:break-word;max-height:50vh;overflow-y:auto;color:var(--text);font-family:ui-monospace,monospace}
 .modal-actions{display:flex;gap:8px;margin-top:14px}
 .modal-actions button{flex:1}
-
-/* User badge */
 #current-user-badge{position:fixed;top:10px;right:10px;font-size:11px;color:var(--text2);z-index:400;background:var(--card);padding:3px 10px;border-radius:10px;border:1px solid var(--border)}
-
-/* Date nav */
 .date-nav{display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .date-nav input{flex:1}
 .date-nav button{min-height:42px;min-width:42px;display:flex;align-items:center;justify-content:center}
-
-/* Checklist */
 .checklist{list-style:none;display:flex;flex-direction:column;gap:8px}
 .checklist li{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5}
 .check-box{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--border2);flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .check-box.done{background:var(--green);border-color:var(--green)}
-.check-box.done::after{content:'✓';color:#000;font-size:11px;font-weight:800}
+.check-box.done::after{content:'checkmark';color:#000;font-size:0}
+.check-box.done{background:var(--green);border-color:var(--green);position:relative}
+.check-box.done::before{content:'✓';color:#000;font-size:12px;font-weight:800;position:absolute}
 .check-text{flex:1}
 .check-text.done-text{text-decoration:line-through;color:var(--muted)}
 .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:4px;vertical-align:middle}
@@ -139,36 +96,21 @@ canvas{width:100%!important}
 .tag-watch{background:#3b2a00;color:#fde68a}
 .tag-rule{background:#1e2a3f;color:#7dd3fc}
 .section-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin:12px 0 8px}
-
-/* Lab table */
 .lab-table{width:100%;border-collapse:collapse;font-size:12px}
 .lab-table th{text-align:left;color:var(--text2);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;padding:5px 6px;border-bottom:1px solid var(--border)}
 .lab-table td{padding:6px 6px;border-bottom:1px solid rgba(35,42,61,.6);vertical-align:middle}
 .lab-table tr:last-child td{border-bottom:none}
-.flag-h{color:var(--orange);font-weight:700}
-.flag-l{color:var(--blue);font-weight:700}
-.flag-ok{color:var(--green)}
-.trend-up{color:var(--red)}
-.trend-down{color:var(--green)}
-.trend-flat{color:var(--muted)}
-.trend-watch{color:var(--yellow)}
-
-/* Weight chart */
+.flag-h{color:var(--orange);font-weight:700}.flag-l{color:var(--blue);font-weight:700}.flag-ok{color:var(--green)}
+.trend-up{color:var(--red)}.trend-down{color:var(--green)}.trend-flat{color:var(--muted)}.trend-watch{color:var(--yellow)}
 .weight-chart{display:flex;align-items:flex-end;gap:5px;height:80px;margin-top:10px}
 .bar-wrap{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
-.bar{width:100%;border-radius:4px 4px 0 0;min-width:20px}
+.bar{width:100%;border-radius:4px 4px 0 0}
 .bar-label{font-size:10px;color:var(--muted);text-align:center}
 .bar-val{font-size:10px;color:var(--text2);text-align:center}
-
-/* Hypotheses */
 .hypothesis{background:rgba(168,85,247,.07);border-left:2px solid var(--purple);padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:8px;font-size:13px;line-height:1.5}
 .hypothesis strong{color:#c4b5fd}
-
-/* Note box */
 .note-box{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.6;color:var(--text2);margin-top:10px}
 .note-box strong{color:var(--text)}
-
-/* Timeline */
 .timeline{display:flex;flex-direction:column;gap:0}
 .tl-item{display:flex;gap:12px;padding-bottom:14px;position:relative}
 .tl-item:not(:last-child)::before{content:'';position:absolute;left:7px;top:18px;bottom:0;width:2px;background:var(--border)}
@@ -176,36 +118,28 @@ canvas{width:100%!important}
 .tl-content{flex:1}
 .tl-date{font-size:11px;color:var(--text2);font-weight:700}
 .tl-text{font-size:13px;margin-top:2px;line-height:1.4}
-
-/* Scrollbar */
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-
-/* Collapsible sections */
 .collapsible-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:2px 0}
 .collapsible-header svg{transition:transform .2s;flex-shrink:0}
 .collapsible-header.open svg{transform:rotate(180deg)}
 .collapsible-body{display:none;margin-top:10px}
 .collapsible-body.open{display:block}
+.meal-entry-item{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--card2);border-radius:8px;margin-bottom:6px;border:1px solid var(--border)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 </style>
 </head>
 <body>
-
 <div id="offline-pill">Offline — syncing when connected</div>
 <div id="current-user-badge"></div>
 <div id="toast"></div>
-
 <div id="user-select-overlay" style="display:none">
   <h2>Who are you?</h2>
   <button onclick="selectUser('Tricia')">🌸 Tricia</button>
   <button onclick="selectUser('Sean')">⚡ Sean</button>
 </div>
-
 <div id="app">
-
-  <!-- LOG SCREEN -->
-  <div id="screen-log" class="screen active" style="display:block">
+  <div id="screen-log" class="screen active">
     <h1>🐱 Daily Log</h1>
     <div class="date-nav">
       <button class="btn-secondary" onclick="shiftDate(-1)">◀</button>
@@ -215,14 +149,10 @@ canvas{width:100%!important}
     <div id="log-form"></div>
     <button class="btn-primary" onclick="saveLog()" style="margin-top:14px">💾 Save Entry</button>
   </div>
-
-  <!-- HISTORY SCREEN -->
   <div id="screen-history" class="screen">
     <h1>📋 History</h1>
     <div id="history-list"></div>
   </div>
-
-  <!-- TRENDS SCREEN -->
   <div id="screen-trends" class="screen">
     <h1>📊 Trends</h1>
     <div class="card"><h2>Weight (lbs)</h2><div class="chart-container"><canvas id="chart-weight"></canvas></div></div>
@@ -232,12 +162,8 @@ canvas{width:100%!important}
     <div class="card"><h2>Rock Licking</h2><div class="chart-container"><canvas id="chart-rock"></canvas></div></div>
     <div class="card"><h2>Food Bowl</h2><div class="chart-container"><canvas id="chart-food"></canvas></div></div>
   </div>
-
-  <!-- MISSION CONTROL SCREEN -->
   <div id="screen-mission" class="screen">
     <h1>🎯 Mission Control</h1>
-
-    <!-- APPOINTMENTS -->
     <div class="card">
       <div class="card-header"><span class="dot dot-orange"></span><h2 style="margin:0">Upcoming Appointments</h2></div>
       <div class="timeline">
@@ -257,33 +183,29 @@ canvas{width:100%!important}
         </div>
       </div>
     </div>
-
-    <!-- SPRINGWATER AGENDA -->
     <div class="card">
       <div class="collapsible-header" onclick="toggleCollapse(this)">
         <div class="card-header" style="margin-bottom:0"><span class="dot dot-orange"></span><h2 style="margin:0">Springwater Vet Agenda</h2></div>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="collapsible-body">
-        <ul class="checklist" id="list-acu">
+        <ul class="checklist">
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Report full current flare: lymph nodes up (mandibular + popliteal), spine palpable through fur, reduced post-dinner activity, not finishing wet food bowl</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Report pollen/outdoor correlation — flare timing matches pollen season and increased patio time</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Report rock-licking resumed <span class="tag tag-watch">WATCH</span></span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: should we temporarily increase frequency back to weekly or biweekly to resolve this flare?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: her current theory on what is driving the lymph node cycles — does an allergic or autoimmune cascade fit?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: which specific Liver meridian points she uses and why — what organ imbalance pattern does she see?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: her current theory on what is driving the lymph node cycles</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: which specific Liver meridian points she uses and why</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: has her point selection or meridian focus changed over time as his condition evolved?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: which other meridians or regions has she targeted beyond Liver — and what symptoms drove those choices?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: in her assessment, is the Liver imbalance the root or a branch of something deeper?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: would she be willing to coordinate directly with Dr. Rider — share her treatment notes and theory?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: which other meridians or regions has she targeted beyond Liver?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: is the Liver imbalance the root or a branch of something deeper?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: would she be willing to coordinate directly with Dr. Rider?</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: her opinion on Jade Lady capsule vs previous powder — is effective dose equivalent?</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Collect her treatment records / point protocol history if possible</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: has she noted any connection between his treatment response and seasonal patterns?</span></li>
         </ul>
       </div>
     </div>
-
-    <!-- DR. RIDER AGENDA -->
     <div class="card">
       <div class="collapsible-header" onclick="toggleCollapse(this)">
         <div class="card-header" style="margin-bottom:0"><span class="dot dot-purple"></span><h2 style="margin:0">June 2 — Dr. Rider Agenda</h2></div>
@@ -292,105 +214,94 @@ canvas{width:100%!important}
       <div class="collapsible-body">
         <div class="section-label">New Tests — Never Run</div>
         <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>fPLI (Spec fPL)</strong> — pancreatic specific, never run. Amylase 2344 + Lipase 62 both elevated Nov 2025. <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Urinalysis + UPC</strong> (urine protein-to-creatinine ratio) — SDMA persistently 17, kidney workup incomplete. Never run. <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Protein electrophoresis (SPEP)</strong> — identify which globulin fraction elevated (Nov 2025: 7.3 H) <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Allergy and/or autoimmune panel</strong> — never run. Ask Dr. Rider what's available for cats. <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Lymph node FNA/cytology</strong> — nodes currently flared, optimal time to sample. Last done Aug 2024. <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Ionized calcium</strong> — only total calcium measured in full history. Ionized is more precise. <span class="tag tag-watch">ADD</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Bartonella PCR + IFA titer</strong> — never tested, rule-out only (low flea exposure) <span class="tag tag-rule">RULE-OUT</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>fPLI (Spec fPL)</strong> — pancreatic specific, never run. <span class="tag tag-urgent">PRIORITY</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Urinalysis + UPC</strong> — SDMA persistently 17. <span class="tag tag-urgent">PRIORITY</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Protein electrophoresis (SPEP)</strong> — globulin 7.3 H <span class="tag tag-urgent">PRIORITY</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Allergy and/or autoimmune panel</strong> — never run <span class="tag tag-urgent">PRIORITY</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Lymph node FNA/cytology</strong> — nodes currently flared, optimal time <span class="tag tag-urgent">PRIORITY</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Ionized calcium</strong> <span class="tag tag-watch">ADD</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Bartonella PCR + IFA titer</strong> — rule-out only <span class="tag tag-rule">RULE-OUT</span></span></li>
         </ul>
         <div class="section-label">Standard Monitoring</div>
         <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Full CBC with differential — watch platelets, globulins, SDMA</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Comprehensive chemistry — watch calcium after water switch</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Full CBC with differential</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Comprehensive chemistry</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">T4 — confirm thyroid still controlled</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Current weight — compare to 9.8 lbs (Jun 2025 peak)</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Amylase + Lipase</strong> — both elevated Nov 2025 for first time. Confirm on panel and discuss pancreatic involvement. <span class="tag tag-urgent">FLAG</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Current weight</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Amylase + Lipase</strong> — both elevated Nov 2025 <span class="tag tag-urgent">FLAG</span></span></li>
         </ul>
         <div class="section-label">Discussion Points</div>
         <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Water switch: distilled → filtered. Calcium normal (9.4), sodium was low (146). Confirm with labs.</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Flea prevention — safest option given medication sensitivities (ask about Capstar/nitenpyram)</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Water switch: distilled to filtered May 12. Confirm with labs.</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Flea prevention — safest option given medication sensitivities</span></li>
           <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Discuss patio/vector exposure risk in context of Bartonella hypothesis</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">If Bartonella positive: discuss 6-week doxycycline course (prior course was only 21 days)</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Share acupuncture records from Springwater — request Dr. Rider review alongside Western chart</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Request referral to board-certified veterinary dentist</strong> — full-mouth radiographs under anesthesia + FCGS extraction therapy. Never done. <span class="tag tag-urgent">PRIORITY</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Share acupuncture records from Springwater</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Request referral to board-certified veterinary dentist</strong> — FCGS workup <span class="tag tag-urgent">PRIORITY</span></span></li>
         </ul>
       </div>
     </div>
-
-    <!-- CURRENT PROTOCOL -->
     <div class="card">
-      <div class="card-header"><span class="dot dot-green"></span><h2 style="margin:0">Current Treatment Protocol</h2></div>
+      <div class="card-header"><span class="dot dot-green"></span><h2 style="margin:0">Current Protocol</h2></div>
       <ul class="checklist">
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Thyro-Tabs 0.1mg — ½ tab by mouth twice daily (Fred Meyer Rx, Dr. Rider)</span></li>
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Jade Lady (Yu Nü Jian) — capsule with powder, twice daily (Springwater Vet)</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Thyro-Tabs 0.1mg — half tab twice daily</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Jade Lady (Yu Nu Jian) — capsule with powder, twice daily</span></li>
         <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Acupuncture — currently monthly (Springwater Vet)</span></li>
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Diet: Fussy Cat wet food (chicken/gravy) + dry food + treats</span></li>
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Water: switched distilled → filtered (May 12, 2026) ✓</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Diet: Fussy Cat wet food + dry + treats</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Water: switched distilled to filtered (May 12, 2026)</span></li>
       </ul>
-      <div class="note-box"><strong>No flea prevention currently.</strong> Discuss with Dr. Rider June 2 — Capstar (nitenpyram) as lowest-risk option given sensitivity history.</div>
+      <div class="note-box"><strong>No flea prevention currently.</strong> Discuss with Dr. Rider June 2.</div>
     </div>
-
-    <!-- LABS -->
     <div class="card">
       <div class="card-header"><span class="dot dot-yellow"></span><h2 style="margin:0">Last Labs — Nov 14, 2025</h2></div>
       <table class="lab-table">
         <thead><tr><th>Test</th><th>Result</th><th>Normal</th><th>Flag</th><th>Trend</th></tr></thead>
         <tbody>
-          <tr><td>T4</td><td>2.3</td><td>0.8–4.7</td><td class="flag-ok">OK</td><td class="trend-flat">→</td></tr>
-          <tr><td>Calcium</td><td>9.4</td><td>8.2–11.2</td><td class="flag-ok">OK</td><td class="trend-down">↓ Good</td></tr>
-          <tr><td>SDMA</td><td>17</td><td>0–14</td><td class="flag-h">H</td><td class="trend-flat">→ Persistent</td></tr>
-          <tr><td>Sodium</td><td>146</td><td>147–157</td><td class="flag-l">L</td><td class="trend-watch">⚠ Low</td></tr>
-          <tr><td>Globulin</td><td>7.3</td><td>3.0–5.9</td><td class="flag-h">H</td><td class="trend-up">↑ Elevated</td></tr>
-          <tr><td>ALB/GLOB</td><td>0.4</td><td>0.5–1.2</td><td class="flag-l">L</td><td class="trend-up">↑ Concern</td></tr>
-          <tr><td>Phosphorus</td><td>6.4</td><td>2.9–6.3</td><td class="flag-h">H</td><td class="trend-flat">→</td></tr>
-          <tr><td>Platelet</td><td>65</td><td>100–440</td><td class="flag-l">L</td><td class="trend-flat">→ Recurring</td></tr>
-          <tr><td>Amylase</td><td>2344</td><td>623–2239</td><td class="flag-h">H</td><td class="trend-up">↑ New high</td></tr>
-          <tr><td>Lipase</td><td>62</td><td>0–45</td><td class="flag-h">H</td><td class="trend-up">↑ Watch</td></tr>
-          <tr><td>Total Protein</td><td>10.0</td><td>6.3–8.8</td><td class="flag-h">H</td><td class="trend-up">↑</td></tr>
-          <tr><td>Creatinine</td><td>1.8</td><td>0.9–2.3</td><td class="flag-ok">OK</td><td class="trend-flat">→</td></tr>
+          <tr><td>T4</td><td>2.3</td><td>0.8-4.7</td><td class="flag-ok">OK</td><td class="trend-flat">stable</td></tr>
+          <tr><td>Calcium</td><td>9.4</td><td>8.2-11.2</td><td class="flag-ok">OK</td><td class="trend-down">improved</td></tr>
+          <tr><td>SDMA</td><td>17</td><td>0-14</td><td class="flag-h">H</td><td class="trend-flat">persistent</td></tr>
+          <tr><td>Sodium</td><td>146</td><td>147-157</td><td class="flag-l">L</td><td class="trend-watch">low</td></tr>
+          <tr><td>Globulin</td><td>7.3</td><td>3.0-5.9</td><td class="flag-h">H</td><td class="trend-up">elevated</td></tr>
+          <tr><td>A/G Ratio</td><td>0.4</td><td>0.5-1.2</td><td class="flag-l">L</td><td class="trend-up">concern</td></tr>
+          <tr><td>Phosphorus</td><td>6.4</td><td>2.9-6.3</td><td class="flag-h">H</td><td class="trend-flat">stable</td></tr>
+          <tr><td>Platelets</td><td>65</td><td>100-440</td><td class="flag-l">L</td><td class="trend-flat">recurring</td></tr>
+          <tr><td>Amylase</td><td>2344</td><td>623-2239</td><td class="flag-h">H</td><td class="trend-up">new high</td></tr>
+          <tr><td>Lipase</td><td>62</td><td>0-45</td><td class="flag-h">H</td><td class="trend-up">watch</td></tr>
+          <tr><td>Total Protein</td><td>10.0</td><td>6.3-8.8</td><td class="flag-h">H</td><td class="trend-up">elevated</td></tr>
+          <tr><td>Creatinine</td><td>1.8</td><td>0.9-2.3</td><td class="flag-ok">OK</td><td class="trend-flat">stable</td></tr>
         </tbody>
       </table>
-      <div class="note-box"><strong>Grok Red Flags:</strong> (1) Persistent thrombocytopenia (platelets 65, recurring) — immune-mediated? (2) Hyperglobulinemia + reversed A/G ratio — strong systemic inflammation. (3) Amylase + Lipase elevated — run fPLI. (4) SDMA 17 + phosphorus 6.4 with weight/appetite decline — early CKD, run UPC.</div>
+      <div class="note-box"><strong>Red flags:</strong> Platelets 65 (recurring), Globulin 7.3 + reversed A/G, Amylase + Lipase both elevated (run fPLI), SDMA 17 + Phosphorus 6.4 (run UPC).</div>
     </div>
-
-    <!-- WEIGHT HISTORY -->
     <div class="card">
       <div class="card-header"><span class="dot dot-blue"></span><h2 style="margin:0">Weight History (lbs)</h2></div>
       <div class="weight-chart">
-        <div class="bar-wrap"><div class="bar" style="height:18px;background:#475569"></div><div class="bar-val">2.7</div><div class="bar-label">Jun'20</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:58px;background:#3b82f6"></div><div class="bar-val">9.9</div><div class="bar-label">Oct'21</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:48px;background:#3b82f6"></div><div class="bar-val">9.0</div><div class="bar-label">Apr'24</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:38px;background:#f97316"></div><div class="bar-val">7.2</div><div class="bar-label">Jul'24</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:40px;background:#f97316"></div><div class="bar-val">7.3</div><div class="bar-label">Aug'24</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:58px;background:#22c55e"></div><div class="bar-val">9.8</div><div class="bar-label">Jun'25</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:50px;background:#eab308"></div><div class="bar-val">9.0</div><div class="bar-label">Nov'25</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:54px;background:#eab308"></div><div class="bar-val">9.5</div><div class="bar-label">May'26</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:18px;background:#475569"></div><div class="bar-val">2.7</div><div class="bar-label">Jun20</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:58px;background:#3b82f6"></div><div class="bar-val">9.9</div><div class="bar-label">Oct21</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:48px;background:#3b82f6"></div><div class="bar-val">9.0</div><div class="bar-label">Apr24</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:38px;background:#f97316"></div><div class="bar-val">7.2</div><div class="bar-label">Jul24</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:40px;background:#f97316"></div><div class="bar-val">7.3</div><div class="bar-label">Aug24</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:58px;background:#22c55e"></div><div class="bar-val">9.8</div><div class="bar-label">Jun25</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:50px;background:#eab308"></div><div class="bar-val">9.0</div><div class="bar-label">Nov25</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:54px;background:#eab308"></div><div class="bar-val">9.5</div><div class="bar-label">May26</div></div>
       </div>
-      <div class="note-box"><strong>Pattern:</strong> Weight tracks treatment efficacy closely. Peak 9.8 lbs = optimal protocol. Weighed May 12, 2026: <strong>9.5 lbs</strong>. Down 0.3 lbs from Nov 2025. Monitor closely.</div>
+      <div class="note-box">May 12, 2026: <strong>9.5 lbs</strong>. Down 0.3 lbs from Nov 2025. Monitor closely.</div>
     </div>
-
-    <!-- HYPOTHESES -->
     <div class="card">
       <div class="collapsible-header" onclick="toggleCollapse(this)">
         <div class="card-header" style="margin-bottom:0"><span class="dot dot-purple"></span><h2 style="margin:0">Active Hypotheses</h2></div>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="collapsible-body">
-        <div class="hypothesis"><strong>#1 — Feline Chronic Gingivostomatitis (FCGS) as Primary Clinical Expression</strong><br>Grok reframe — FCGS is a recognized immune-mediated syndrome explaining the entire oral history as one coherent diagnosis. Cycling lymph nodes, mobile teeth, foul breath, and poor long-term antibiotic/steroid response all fit. Not just bad teeth — a systemic immune condition with oral manifestation. Gold standard treatment is full-mouth extraction by a board-certified veterinary dentist. <strong>Dental specialist referral and full-mouth radiographs under anesthesia never done — high priority.</strong></div>
-        <div class="hypothesis"><strong>#2 — Post-Infectious Autoimmune Cascade from 2020 Salivary Infection (Leading Western Theory)</strong><br>Original cocci bacteria infection triggered immune cascade that never fully resolved. Molecular mimicry driving cyclical lymphadenopathy. Doxycycline produced no observable change — supports autoimmune not infectious driver. Explains polyarthritis, steroid reaction, oral chronicity, cycling pattern. Acupuncturist's working theory. May include lymphocytic thyroiditis as component. <strong>Allergy and autoimmune panel never run — priority for June 2.</strong></div>
-        <div class="hypothesis"><strong>#3 — Liver Meridian Dysregulation (Chinese Medicine Framework — Strongly Supported)</strong><br>Acupuncturist targets Liver meridian nearly every visit. Western labs show elevated liver-adjacent enzymes (amylase 2344, lipase 62, globulin 7.3) independently converging on same organ system. Liver/Spleen imbalance maps to cyclical lymphadenopathy, chronic oral inflammation, stomatitis, digestive stress. Parallel description of #2 in Chinese medicine framework. Liver-targeted acupuncture producing remission is significant clinical data.</div>
-        <div class="hypothesis"><strong>#4 — Early Chronic Kidney Disease / IRIS Stage 1–2 (Grok Addition — Clinically Relevant)</strong><br>SDMA persistently elevated at 17 across multiple draws. Phosphorus 6.4 (high). Recent appetite decline and weight loss. Combined with current flare = warrants UPC (urine protein-to-creatinine ratio) and repeat urinalysis on June 2. More aggressive kidney workup than currently planned may be warranted.</div>
-        <div class="hypothesis"><strong>#5 — Mild/Subclinical Pancreatitis or GI Inflammation (Grok Addition)</strong><br>Amylase 2344 and lipase 62 both elevated for first time in November 2025. Specific test needed: <strong>fPLI (Spec fPL)</strong> — never run. Add to June 2 panel.</div>
-        <div class="hypothesis"><strong>#6 — Seasonal Allergic Component (Supported by Correlation)</strong><br>Flares correlate with pollen season and increased patio time. 3rd floor wood balcony — low flea risk. Hyperreactive immune system treating pollen as pathogen. Co-occurring with #2 rather than independent. Allergy panel never run.</div>
-        <div class="hypothesis"><strong>#7 — Bartonella (Rule-Out Only — Low Probability)</strong><br>Never tested. 3rd floor balcony = low flea transmission risk. Doxycycline produced no change. Single PCR + IFA titer June 2 to permanently rule out.</div>
-        <div class="hypothesis"><strong>#8 — Mineral Dysregulation from Distilled Water (Actionable — In Progress)</strong><br>Sodium low at 146. Rock-licking = mineral compensation. Calcium now normal. Switched to filtered water May 12, 2026. June 2 labs will show impact.</div>
+        <div class="hypothesis"><strong>#1 — Feline Chronic Gingivostomatitis (FCGS) as Primary Clinical Expression</strong><br>Immune-mediated syndrome explaining entire oral history. Cycling lymph nodes, mobile teeth, foul breath, poor antibiotic/steroid response all fit. Gold standard: full-mouth extraction by board-certified veterinary dentist. <strong>Never done — high priority.</strong></div>
+        <div class="hypothesis"><strong>#2 — Post-Infectious Autoimmune Cascade from 2020 Salivary Infection (Leading Western Theory)</strong><br>Original infection triggered immune cascade never fully resolved. Molecular mimicry driving cyclical lymphadenopathy. Doxycycline produced no change — supports autoimmune not infectious driver. <strong>Allergy/autoimmune panel never run — priority June 2.</strong></div>
+        <div class="hypothesis"><strong>#3 — Liver/Spleen Meridian Dysregulation (TCM — Strongly Supported)</strong><br>Acupuncturist targets Liver meridian nearly every visit. Western labs show elevated liver-adjacent enzymes independently converging on same organ system. Parallel description of #2 in Chinese medicine framework.</div>
+        <div class="hypothesis"><strong>#4 — Early CKD / IRIS Stage 1-2</strong><br>SDMA persistently 17. Phosphorus 6.4 high. Appetite decline and weight loss. Warrants UPC + urinalysis June 2. More aggressive kidney workup may be warranted.</div>
+        <div class="hypothesis"><strong>#5 — Mild/Subclinical Pancreatitis or GI Inflammation</strong><br>Amylase 2344 and lipase 62 both elevated first time Nov 2025. Run fPLI (Spec fPL) — never done.</div>
+        <div class="hypothesis"><strong>#6 — Seasonal Allergic Component</strong><br>Flares correlate with pollen season and increased patio time. Hyperreactive immune system. Allergy panel never run.</div>
+        <div class="hypothesis"><strong>#7 — Bartonella (Rule-Out Only — Low Probability)</strong><br>Never tested. Low flea exposure. Doxycycline produced no change. Single PCR + IFA titer June 2.</div>
+        <div class="hypothesis"><strong>#8 — Mineral Dysregulation from Distilled Water</strong><br>Sodium low 146. Rock-licking = mineral compensation. Switched to filtered water May 12, 2026. June 2 labs will show impact.</div>
       </div>
     </div>
-
-    <!-- OPEN QUESTIONS -->
     <div class="card">
       <div class="collapsible-header" onclick="toggleCollapse(this)">
         <div class="card-header" style="margin-bottom:0"><span class="dot dot-red"></span><h2 style="margin:0">Open Questions</h2></div>
@@ -398,25 +309,20 @@ canvas{width:100%!important}
       </div>
       <div class="collapsible-body">
         <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Has Bartonella ever been directly tested? (No — run June 2 as rule-out only)</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Has an allergy or autoimmune panel ever been run? (No — never. Priority for June 2.)</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Which globulin fraction is elevated — IgG, IgM, IgA? (Requires protein electrophoresis — never run)</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Amylase/Lipase elevated Nov 2025 — fPLI (Spec fPL) never run. Add to June 2 panel.</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">SDMA persistently 17 — has UPC ever been run? (No. Add to June 2.)</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Is FCGS the correct framing for his oral disease? Ask Dr. Rider.</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Has full-mouth dental radiography under anesthesia ever been done or discussed? (No.)</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">What specific Liver meridian points does Springwater use — has protocol shifted as condition changed?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Is the Liver imbalance the root cause or downstream of something deeper?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Which other meridians beyond Liver have been targeted and what drove those choices?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Will Springwater acupuncturist coordinate directly with Dr. Rider?</span></li>
-          <li><div class="check-box done" onclick="toggleCheck(this)"></div><span class="check-text done-text">What is his actual current weight? — <strong>9.5 lbs, May 12 2026</strong></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Has Bartonella ever been directly tested? No — run June 2 as rule-out</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Has allergy or autoimmune panel ever been run? No — priority June 2</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Which globulin fraction is elevated? Requires SPEP — never run</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">fPLI never run — add to June 2</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">UPC never run — add to June 2</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Is FCGS the correct framing for his oral disease?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Full-mouth dental radiography under anesthesia — never discussed</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">What specific Liver meridian points does Springwater use?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Will Springwater coordinate directly with Dr. Rider?</span></li>
+          <li><div class="check-box done" onclick="toggleCheck(this)"></div><span class="check-text done-text">Current weight — 9.5 lbs May 12, 2026</span></li>
         </ul>
       </div>
     </div>
-
   </div>
-
-  <!-- SUMMARY SCREEN -->
   <div id="screen-summary" class="screen">
     <h1>📝 Reports</h1>
     <div class="card">
@@ -429,39 +335,586 @@ canvas{width:100%!important}
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Rock/mineral licking — frequency and material</span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Wet food bowl — finishing or leaving remainder?</span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Post-dinner activity window — present or absent?</span></li>
-        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Palpable lymph nodes — any change at throat and behind knees?</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Palpable lymph nodes — throat and behind knees</span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Breath odor — normal range or worse than baseline?</span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Patio time duration and time of day</span></li>
-        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Any response change after water switch (more drinking, less rock licking?)</span></li>
-        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Coat quality — maintaining softness or any dandruff returning?</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Response to water switch — more drinking, less rock licking?</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Coat quality — softness or dandruff returning?</span></li>
       </ul>
     </div>
     <div style="margin-top:10px;text-align:center">
       <button class="btn-secondary" style="font-size:12px;color:var(--muted);border-color:var(--border)" onclick="selectUser(null)">Switch User</button>
     </div>
   </div>
-
-  <!-- BOTTOM NAV -->
   <nav>
     <button onclick="showScreen('log')" id="nav-log" class="active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      Log
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Log
     </button>
     <button onclick="showScreen('history')" id="nav-history">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-      History
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>History
     </button>
     <button onclick="showScreen('trends')" id="nav-trends">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      Trends
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Trends
     </button>
     <button onclick="showScreen('mission')" id="nav-mission">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      Mission
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Mission
     </button>
     <button onclick="showScreen('summary')" id="nav-summary">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-      Reports
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Reports
     </button>
   </nav>
 </div>
+<div id="modal-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDMHHUcEHKJhj1u1icil-Q9XFg4LztvW38",
+  authDomain: "chewie-tracker.firebaseapp.com",
+  projectId: "chewie-tracker",
+  storageBucket: "chewie-tracker.firebasestorage.app",
+  messagingSenderId: "770615231011",
+  appId: "1:770615231011:web:6a59884576ad915a082796"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+db.enablePersistence().catch(function(err) {
+  if (err.code !== 'failed-precondition' && err.code !== 'unimplemented') console.warn('Persistence:', err.code);
+});
+const COLLECTION = 'chewie_logs';
+const SELECT_FIELDS = [
+  { key: 'postDinnerActivity', label: 'Post-Dinner Activity', options: [
+    { text: 'Full zoomies ~2hr', severity: 'green' },
+    { text: 'Moderate', severity: 'yellow' },
+    { text: 'Minimal', severity: 'orange' },
+    { text: 'None', severity: 'red' }
+  ]},
+  { key: 'coatQuality', label: 'Coat Quality', options: [
+    { text: 'Soft and clean', severity: 'green' },
+    { text: 'Slight dullness', severity: 'yellow' },
+    { text: 'Dandruff present', severity: 'orange' },
+    { text: 'Greasy', severity: 'red' }
+  ]},
+  { key: 'breathOdor', label: 'Breath Odor', options: [
+    { text: 'Normal', severity: 'green' },
+    { text: 'Slightly off', severity: 'yellow' },
+    { text: 'Noticeably bad', severity: 'orange' },
+    { text: 'Very bad', severity: 'red' }
+  ]},
+  { key: 'rockLicking', label: 'Rock / Mineral Licking', options: [
+    { text: 'None', severity: 'green' },
+    { text: 'Once', severity: 'yellow' },
+    { text: 'Multiple times', severity: 'orange' },
+    { text: 'Constant', severity: 'red' }
+  ]},
+  { key: 'throatLymph', label: 'Throat Lymph Nodes', options: [
+    { text: 'Not palpable', severity: 'green' },
+    { text: 'Slightly enlarged', severity: 'yellow' },
+    { text: 'Clearly enlarged', severity: 'orange' },
+    { text: 'Very enlarged', severity: 'red' }
+  ]},
+  { key: 'backKneeLymph', label: 'Back Knee Lymph Nodes', options: [
+    { text: 'Not palpable', severity: 'green' },
+    { text: 'Slightly enlarged', severity: 'yellow' },
+    { text: 'Clearly enlarged', severity: 'orange' },
+    { text: 'Very enlarged', severity: 'red' }
+  ]},
+  { key: 'energyLevel', label: 'Energy Level', options: [
+    { text: 'High', severity: 'green' },
+    { text: 'Normal', severity: 'yellow' },
+    { text: 'Low', severity: 'orange' },
+    { text: 'Very low', severity: 'red' }
+  ]},
+  { key: 'waterDrinking', label: 'Water Drinking', options: [
+    { text: 'Normal', severity: 'green' },
+    { text: 'More than usual', severity: 'yellow' },
+    { text: 'Less than usual', severity: 'yellow' }
+  ]}
+];
+const NUMBER_FIELDS = [
+  { key: 'weight', label: 'Weight (lbs)', step: '0.1' },
+  { key: 'patioTime', label: 'Patio Time (minutes)', step: '1' }
+];
+const TEXT_FIELDS = [
+  { key: 'generalNotes', label: 'General Notes' },
+  { key: 'newSymptoms', label: 'New or Unusual Symptoms' }
+];
+const SEVERITY_MAP = {};
+SELECT_FIELDS.forEach(function(f) { f.options.forEach(function(o) { SEVERITY_MAP[o.text] = o.severity; }); });
+const SEVERITY_COLORS = { green: '#22c55e', yellow: '#eab308', orange: '#f97316', red: '#ef4444' };
+let currentUser = localStorage.getItem('chewie_user') || null;
+let allLogs = {};
+let chartInstances = {};
+let mealEntries = [];
+
+function initUserSelect() {
+  if (!currentUser) {
+    document.getElementById('user-select-overlay').style.display = 'flex';
+  } else {
+    document.getElementById('user-select-overlay').style.display = 'none';
+    document.getElementById('current-user-badge').textContent = 'User: ' + currentUser;
+  }
+}
+
+function selectUser(name) {
+  if (!name) {
+    currentUser = null;
+    localStorage.removeItem('chewie_user');
+    document.getElementById('user-select-overlay').style.display = 'flex';
+    document.getElementById('current-user-badge').textContent = '';
+    return;
+  }
+  currentUser = name;
+  localStorage.setItem('chewie_user', name);
+  document.getElementById('user-select-overlay').style.display = 'none';
+  document.getElementById('current-user-badge').textContent = 'User: ' + currentUser;
+  renderHistory();
+}
+
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('nav button').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('screen-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  if (name === 'history') renderHistory();
+  if (name === 'trends') renderCharts();
+}
+
+window.addEventListener('online', function() { document.getElementById('offline-pill').style.display = 'none'; });
+window.addEventListener('offline', function() { document.getElementById('offline-pill').style.display = 'block'; });
+if (!navigator.onLine) document.getElementById('offline-pill').style.display = 'block';
+
+function showToast(msg, color) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = color || 'var(--green)';
+  t.style.color = (color === '#ef4444') ? '#fff' : '#000';
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2500);
+}
+
+function todayStr() {
+  var d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+function getLogDate() { return document.getElementById('log-date').value; }
+function shiftDate(delta) {
+  var inp = document.getElementById('log-date');
+  var d = new Date(inp.value + 'T12:00:00');
+  d.setDate(d.getDate() + delta);
+  inp.value = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  onDateChange();
+}
+function onDateChange() { populateForm(getLogDate()); }
+
+function toggleCollapse(header) {
+  header.classList.toggle('open');
+  header.nextElementSibling.classList.toggle('open');
+}
+function toggleCheck(el) {
+  el.classList.toggle('done');
+  el.nextElementSibling.classList.toggle('done-text');
+}
+
+function buildForm() {
+  var container = document.getElementById('log-form');
+  var html = '';
+  html += '<div class="field-group"><div class="field-label">Meal</div><div class="btn-group">';
+  html += '<button type="button" class="btn-option meal-btn" data-meal="breakfast" onclick="selectMeal(this)">Breakfast</button>';
+  html += '<button type="button" class="btn-option meal-btn" data-meal="dinner" onclick="selectMeal(this)">Dinner</button>';
+  html += '</div></div>';
+  html += '<div class="field-group"><div class="field-label">Wet Food Bowl</div><div class="btn-group">';
+  var bowlOpts = [
+    { text: 'Finished clean', severity: 'green' },
+    { text: 'Left some', severity: 'yellow' },
+    { text: 'Left most', severity: 'orange' },
+    { text: 'Refused', severity: 'red' }
+  ];
+  bowlOpts.forEach(function(opt) {
+    html += '<button type="button" class="btn-option" data-field="mealFood" data-value="' + opt.text + '" data-severity="' + opt.severity + '" onclick="toggleOption(this)">' + opt.text + '</button>';
+  });
+  html += '</div></div>';
+  html += '<button class="btn-secondary" onclick="addMealEntry()" style="width:100%;margin-bottom:14px">+ Add Meal Entry</button>';
+  html += '<div id="meal-entries"></div>';
+  html += '<div class="field-label" style="margin-bottom:12px">Daily Observations</div>';
+  SELECT_FIELDS.forEach(function(field) {
+    html += '<div class="field-group"><div class="field-label">' + field.label + '</div><div class="btn-group">';
+    field.options.forEach(function(opt) {
+      html += '<button type="button" class="btn-option" data-field="' + field.key + '" data-value="' + opt.text + '" data-severity="' + opt.severity + '" onclick="toggleOption(this)">' + opt.text + '</button>';
+    });
+    html += '</div></div>';
+  });
+  NUMBER_FIELDS.forEach(function(field) {
+    html += '<div class="field-group"><div class="field-label">' + field.label + '</div><input type="number" id="field-' + field.key + '" step="' + field.step + '" placeholder="' + field.label + '" inputmode="decimal"></div>';
+  });
+  TEXT_FIELDS.forEach(function(field) {
+    html += '<div class="field-group"><div class="field-label">' + field.label + '</div><textarea id="field-' + field.key + '" placeholder="' + field.label + '" rows="3"></textarea></div>';
+  });
+  html += '<button class="btn-secondary btn-danger" onclick="clearForm()" style="width:100%;margin-top:4px">Clear Form</button>';
+  container.innerHTML = html;
+}
+
+function toggleOption(btn) {
+  var field = btn.dataset.field;
+  var isSelected = btn.classList.contains('selected');
+  document.querySelectorAll('.btn-option[data-field="' + field + '"]').forEach(function(b) { b.classList.remove('selected'); });
+  if (!isSelected) btn.classList.add('selected');
+}
+
+function selectMeal(btn) {
+  document.querySelectorAll('.meal-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+}
+
+function addMealEntry() {
+  var mealBtn = document.querySelector('.meal-btn.selected');
+  var foodBtn = document.querySelector('.btn-option[data-field="mealFood"].selected');
+  if (!mealBtn) { showToast('Select a meal first', '#ef4444'); return; }
+  if (!foodBtn) { showToast('Select bowl result first', '#ef4444'); return; }
+  var meal = mealBtn.dataset.meal;
+  var food = foodBtn.dataset.value;
+  mealEntries = mealEntries.filter(function(e) { return e.meal !== meal; });
+  mealEntries.push({ meal: meal, food: food });
+  renderMealEntries();
+  document.querySelectorAll('.meal-btn').forEach(function(b) { b.classList.remove('selected'); });
+  document.querySelectorAll('.btn-option[data-field="mealFood"]').forEach(function(b) { b.classList.remove('selected'); });
+}
+
+function renderMealEntries() {
+  var container = document.getElementById('meal-entries');
+  if (!container) return;
+  if (mealEntries.length === 0) { container.innerHTML = ''; return; }
+  var html = '';
+  mealEntries.forEach(function(e, i) {
+    var sev = SEVERITY_MAP[e.food] || 'green';
+    html += '<div class="meal-entry-item">';
+    html += '<span>' + (e.meal === 'breakfast' ? 'Breakfast' : 'Dinner') + '</span>';
+    html += '<span style="color:' + SEVERITY_COLORS[sev] + ';font-weight:600">' + e.food + '</span>';
+    html += '<button onclick="removeMealEntry(' + i + ')" style="background:none;border:none;color:var(--red);font-size:18px;cursor:pointer;padding:0 4px">x</button>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function removeMealEntry(i) {
+  mealEntries.splice(i, 1);
+  renderMealEntries();
+}
+
+function clearForm() {
+  document.querySelectorAll('.btn-option').forEach(function(b) { b.classList.remove('selected'); });
+  NUMBER_FIELDS.forEach(function(f) { var el = document.getElementById('field-' + f.key); if (el) el.value = ''; });
+  TEXT_FIELDS.forEach(function(f) { var el = document.getElementById('field-' + f.key); if (el) el.value = ''; });
+  mealEntries = [];
+  renderMealEntries();
+}
+
+function populateForm(dateStr) {
+  document.querySelectorAll('.btn-option').forEach(function(b) { b.classList.remove('selected'); });
+  NUMBER_FIELDS.forEach(function(f) { var el = document.getElementById('field-' + f.key); if (el) el.value = ''; });
+  TEXT_FIELDS.forEach(function(f) { var el = document.getElementById('field-' + f.key); if (el) el.value = ''; });
+  mealEntries = [];
+  renderMealEntries();
+  var data = allLogs[dateStr];
+  if (!data) return;
+  SELECT_FIELDS.forEach(function(field) {
+    if (data[field.key]) {
+      var btn = document.querySelector('.btn-option[data-field="' + field.key + '"][data-value="' + data[field.key] + '"]');
+      if (btn) btn.classList.add('selected');
+    }
+  });
+  if (data.breakfastBowl) mealEntries.push({ meal: 'breakfast', food: data.breakfastBowl });
+  if (data.dinnerBowl) mealEntries.push({ meal: 'dinner', food: data.dinnerBowl });
+  renderMealEntries();
+  NUMBER_FIELDS.forEach(function(f) {
+    if (data[f.key] !== undefined && data[f.key] !== null && data[f.key] !== '') {
+      var el = document.getElementById('field-' + f.key);
+      if (el) el.value = data[f.key];
+    }
+  });
+  TEXT_FIELDS.forEach(function(f) {
+    if (data[f.key]) { var el = document.getElementById('field-' + f.key); if (el) el.value = data[f.key]; }
+  });
+}
+
+function gatherFormData() {
+  var data = {};
+  SELECT_FIELDS.forEach(function(field) {
+    var sel = document.querySelector('.btn-option[data-field="' + field.key + '"].selected');
+    data[field.key] = sel ? sel.dataset.value : '';
+  });
+  data.breakfastBowl = '';
+  data.dinnerBowl = '';
+  mealEntries.forEach(function(e) {
+    if (e.meal === 'breakfast') data.breakfastBowl = e.food;
+    if (e.meal === 'dinner') data.dinnerBowl = e.food;
+  });
+  data.wetFoodBowl = data.dinnerBowl || data.breakfastBowl || '';
+  NUMBER_FIELDS.forEach(function(f) {
+    var v = document.getElementById('field-' + f.key).value;
+    data[f.key] = v !== '' ? parseFloat(v) : null;
+  });
+  TEXT_FIELDS.forEach(function(f) {
+    data[f.key] = document.getElementById('field-' + f.key).value.trim();
+  });
+  return data;
+}
+
+async function saveLog() {
+  var dateStr = getLogDate();
+  if (!dateStr) { showToast('Select a date', '#ef4444'); return; }
+  var data = gatherFormData();
+  data.isoDate = dateStr;
+  data.lastEditedBy = currentUser;
+  data.updatedAt = firebase.firestore.FieldValue.serverTimestamp();
+  try {
+    await db.collection(COLLECTION).doc(dateStr).set(data, { merge: true });
+    allLogs[dateStr] = data;
+    renderHistory();
+    clearForm();
+    showToast('Saved to cloud!', '#22c55e');
+  } catch (e) {
+    console.error('Save error:', e);
+    showToast('Save FAILED — check connection', '#ef4444');
+  }
+}
+
+function startListener() {
+  db.collection(COLLECTION).orderBy('isoDate', 'desc').onSnapshot(function(snapshot) {
+    snapshot.docChanges().forEach(function(change) {
+      var data = change.doc.data();
+      var id = change.doc.id;
+      if (change.type === 'removed') { delete allLogs[id]; } else { allLogs[id] = data; }
+    });
+    renderHistory();
+    var activeScreen = document.querySelector('.screen.active');
+    if (activeScreen && activeScreen.id === 'screen-trends') renderCharts();
+  }, function(err) { console.error('Snapshot error:', err); });
+}
+
+function renderHistory() {
+  var container = document.getElementById('history-list');
+  if (!container) return;
+  var dates = Object.keys(allLogs).sort().reverse();
+  if (dates.length === 0) {
+    container.innerHTML = '<div class="card" style="text-align:center;color:var(--muted)">No entries yet.</div>';
+    return;
+  }
+  var html = '';
+  dates.forEach(function(dateStr) {
+    var entry = allLogs[dateStr];
+    var dots = getDotsHTML(entry);
+    var editor = entry.lastEditedBy || 'Unknown';
+    html += '<div class="card history-entry" onclick="toggleDetails(\'' + dateStr + '\')">';
+    html += '<div class="history-header"><span class="history-date">' + formatDateDisplay(dateStr) + '</span><span class="history-editor">Logged by: ' + editor + '</span></div>';
+    html += '<div class="severity-dots">' + dots + '</div>';
+    html += '<div class="history-details" id="details-' + dateStr + '">';
+    html += renderEntryDetails(entry);
+    html += '<div class="history-actions"><button class="btn-secondary" onclick="event.stopPropagation();editEntry(\'' + dateStr + '\')">Edit</button>';
+    html += '<button class="btn-secondary btn-danger" onclick="event.stopPropagation();deleteEntry(\'' + dateStr + '\')">Delete</button></div>';
+    html += '</div></div>';
+  });
+  container.innerHTML = html;
+}
+
+function getDotsHTML(entry) {
+  var html = '';
+  SELECT_FIELDS.forEach(function(f) {
+    var val = entry[f.key];
+    if (val) {
+      var sev = SEVERITY_MAP[val] || 'green';
+      html += '<div class="severity-dot" style="background:' + SEVERITY_COLORS[sev] + '" title="' + f.label + ': ' + val + '"></div>';
+    }
+  });
+  return html;
+}
+
+function formatDateDisplay(dateStr) {
+  var d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function renderEntryDetails(entry) {
+  var html = '';
+  if (entry.breakfastBowl) {
+    var sev = SEVERITY_MAP[entry.breakfastBowl] || 'green';
+    html += '<div class="detail-row"><span class="detail-label">Breakfast Bowl</span><span class="detail-value" style="color:' + SEVERITY_COLORS[sev] + '">' + entry.breakfastBowl + '</span></div>';
+  }
+  if (entry.dinnerBowl) {
+    var sev2 = SEVERITY_MAP[entry.dinnerBowl] || 'green';
+    html += '<div class="detail-row"><span class="detail-label">Dinner Bowl</span><span class="detail-value" style="color:' + SEVERITY_COLORS[sev2] + '">' + entry.dinnerBowl + '</span></div>';
+  }
+  SELECT_FIELDS.forEach(function(f) {
+    var val = entry[f.key];
+    if (val) {
+      var sev = SEVERITY_MAP[val] || 'green';
+      html += '<div class="detail-row"><span class="detail-label">' + f.label + '</span><span class="detail-value" style="color:' + SEVERITY_COLORS[sev] + '">' + val + '</span></div>';
+    }
+  });
+  NUMBER_FIELDS.forEach(function(f) {
+    if (entry[f.key] !== null && entry[f.key] !== undefined) {
+      html += '<div class="detail-row"><span class="detail-label">' + f.label + '</span><span class="detail-value">' + entry[f.key] + '</span></div>';
+    }
+  });
+  TEXT_FIELDS.forEach(function(f) {
+    if (entry[f.key]) {
+      html += '<div class="detail-row" style="flex-direction:column"><span class="detail-label">' + f.label + '</span><span class="detail-value" style="margin-top:4px">' + escapeHtml(entry[f.key]) + '</span></div>';
+    }
+  });
+  return html;
+}
+
+function toggleDetails(dateStr) {
+  document.getElementById('details-' + dateStr).classList.toggle('open');
+}
+function editEntry(dateStr) {
+  document.getElementById('log-date').value = dateStr;
+  populateForm(dateStr);
+  showScreen('log');
+}
+async function deleteEntry(dateStr) {
+  if (!confirm('Delete entry for ' + formatDateDisplay(dateStr) + '?')) return;
+  try {
+    await db.collection(COLLECTION).doc(dateStr).delete();
+    delete allLogs[dateStr];
+    renderHistory();
+    showToast('Deleted', '#ef4444');
+  } catch (e) { showToast('Delete failed', '#ef4444'); }
+}
+
+function renderCharts() {
+  var dates = Object.keys(allLogs).sort();
+  if (dates.length < 2) return;
+  var labels = dates.map(function(d) { var dt = new Date(d + 'T12:00:00'); return (dt.getMonth()+1) + '/' + dt.getDate(); });
+  Object.values(chartInstances).forEach(function(c) { c.destroy(); });
+  chartInstances = {};
+  var baseOpts = {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { labels: { color: '#64748b', font: { size: 10 } } } },
+    scales: {
+      x: { ticks: { color: '#64748b', font: { size: 9 }, maxRotation: 45 }, grid: { color: 'rgba(45,53,72,0.4)' } },
+      y: { ticks: { color: '#64748b', font: { size: 9 } }, grid: { color: 'rgba(45,53,72,0.4)' } }
+    }
+  };
+  var weights = dates.map(function(d) { return allLogs[d].weight; });
+  if (weights.some(function(w) { return w !== null && w !== undefined; })) {
+    chartInstances.weight = new Chart(document.getElementById('chart-weight'), { type: 'line', data: { labels: labels, datasets: [{ label: 'Weight (lbs)', data: weights, borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.08)', fill: true, tension: 0.3, spanGaps: true, pointRadius: 3 }] }, options: Object.assign({}, baseOpts) });
+  }
+  var energyMap = { 'High': 3, 'Normal': 2, 'Low': 1, 'Very low': 0 };
+  var energies = dates.map(function(d) { return energyMap[allLogs[d].energyLevel] !== undefined ? energyMap[allLogs[d].energyLevel] : null; });
+  chartInstances.energy = new Chart(document.getElementById('chart-energy'), { type: 'line', data: { labels: labels, datasets: [{ label: 'Energy', data: energies, borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.08)', fill: true, tension: 0.3, spanGaps: true, pointRadius: 3 }] }, options: Object.assign({}, baseOpts, { scales: Object.assign({}, baseOpts.scales, { y: Object.assign({}, baseOpts.scales.y, { min: 0, max: 3, ticks: Object.assign({}, baseOpts.scales.y.ticks, { stepSize: 1, callback: function(v) { return ['Very low','Low','Normal','High'][v] || v; } }) }) }) }) });
+  var lymphMap = { 'Not palpable': 0, 'Slightly enlarged': 1, 'Clearly enlarged': 2, 'Very enlarged': 3 };
+  var throat = dates.map(function(d) { return lymphMap[allLogs[d].throatLymph] !== undefined ? lymphMap[allLogs[d].throatLymph] : null; });
+  var knee = dates.map(function(d) { return lymphMap[allLogs[d].backKneeLymph] !== undefined ? lymphMap[allLogs[d].backKneeLymph] : null; });
+  chartInstances.lymph = new Chart(document.getElementById('chart-lymph'), { type: 'line', data: { labels: labels, datasets: [{ label: 'Throat', data: throat, borderColor: '#f97316', tension: 0.3, spanGaps: true, pointRadius: 3 }, { label: 'Back Knee', data: knee, borderColor: '#ef4444', tension: 0.3, spanGaps: true, pointRadius: 3 }] }, options: Object.assign({}, baseOpts, { scales: Object.assign({}, baseOpts.scales, { y: Object.assign({}, baseOpts.scales.y, { min: 0, max: 3 }) }) }) });
+  var patio = dates.map(function(d) { return allLogs[d].patioTime !== undefined ? allLogs[d].patioTime : null; });
+  var avgLymph = dates.map(function(d, i) { var t = throat[i], k = knee[i]; if (t === null && k === null) return null; if (t === null) return k; if (k === null) return t; return (t + k) / 2; });
+  chartInstances.patioLymph = new Chart(document.getElementById('chart-patio-lymph'), { type: 'line', data: { labels: labels, datasets: [{ label: 'Patio (min)', data: patio, borderColor: '#22c55e', yAxisID: 'y', tension: 0.3, spanGaps: true, pointRadius: 3 }, { label: 'Avg Lymph', data: avgLymph, borderColor: '#ef4444', yAxisID: 'y1', tension: 0.3, spanGaps: true, pointRadius: 3 }] }, options: Object.assign({}, baseOpts, { scales: { x: baseOpts.scales.x, y: Object.assign({}, baseOpts.scales.y, { position: 'left' }), y1: Object.assign({}, baseOpts.scales.y, { position: 'right', min: 0, max: 3, grid: { drawOnChartArea: false } }) } }) });
+  var rockMap = { 'None': 0, 'Once': 1, 'Multiple times': 2, 'Constant': 3 };
+  var rocks = dates.map(function(d) { return rockMap[allLogs[d].rockLicking] || 0; });
+  var rockColors = dates.map(function(d) { return SEVERITY_COLORS[SEVERITY_MAP[allLogs[d].rockLicking] || 'green']; });
+  chartInstances.rock = new Chart(document.getElementById('chart-rock'), { type: 'bar', data: { labels: labels, datasets: [{ label: 'Rock Licking', data: rocks, backgroundColor: rockColors, borderRadius: 3 }] }, options: Object.assign({}, baseOpts, { scales: Object.assign({}, baseOpts.scales, { y: Object.assign({}, baseOpts.scales.y, { min: 0, max: 3 }) }) }) });
+  var foodMap = { 'Finished clean': 3, 'Left some': 2, 'Left most': 1, 'Refused': 0 };
+  var foods = dates.map(function(d) { return foodMap[allLogs[d].wetFoodBowl] !== undefined ? foodMap[allLogs[d].wetFoodBowl] : null; });
+  chartInstances.food = new Chart(document.getElementById('chart-food'), { type: 'line', data: { labels: labels, datasets: [{ label: 'Food Completion', data: foods, borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.08)', fill: true, tension: 0.3, spanGaps: true, pointRadius: 3 }] }, options: Object.assign({}, baseOpts, { scales: Object.assign({}, baseOpts.scales, { y: Object.assign({}, baseOpts.scales.y, { min: 0, max: 3 }) }) }) });
+}
+
+function generateVetSummary() {
+  var now = new Date();
+  var thirtyAgo = new Date(now);
+  thirtyAgo.setDate(thirtyAgo.getDate() - 30);
+  var cutoff = thirtyAgo.getFullYear() + '-' + String(thirtyAgo.getMonth()+1).padStart(2,'0') + '-' + String(thirtyAgo.getDate()).padStart(2,'0');
+  var dates = Object.keys(allLogs).filter(function(d) { return d >= cutoff; }).sort();
+  if (dates.length === 0) { showToast('No data in last 30 days', '#ef4444'); return; }
+  var entries = dates.map(function(d) { return Object.assign({ date: d }, allLogs[d]); });
+  var lines = [];
+  lines.push('CHEWIE HEALTH SUMMARY');
+  lines.push('========================================');
+  lines.push('Date Range: ' + formatDateDisplay(dates[0]) + ' to ' + formatDateDisplay(dates[dates.length-1]));
+  lines.push('Entries: ' + dates.length);
+  lines.push('');
+  var weights = entries.filter(function(e) { return e.weight !== null && e.weight !== undefined; });
+  if (weights.length > 0) {
+    var first = weights[0].weight, last = weights[weights.length-1].weight, diff = last - first;
+    lines.push('WEIGHT: ' + first + ' lbs -> ' + last + ' lbs (' + (diff > 0 ? '+' : '') + diff.toFixed(1) + ' lbs)');
+  }
+  lines.push('');
+  var flareDays = [];
+  entries.forEach(function(e) {
+    var redCount = 0;
+    SELECT_FIELDS.forEach(function(f) { if (e[f.key] && SEVERITY_MAP[e[f.key]] === 'red') redCount++; });
+    if (redCount >= 2) flareDays.push(e.date);
+  });
+  if (flareDays.length > 0) lines.push('POSSIBLE FLARE DAYS: ' + flareDays.join(', '));
+  var notes = entries.filter(function(e) { return e.generalNotes || e.newSymptoms; });
+  if (notes.length > 0) {
+    lines.push('');
+    lines.push('NOTES:');
+    notes.forEach(function(e) {
+      if (e.generalNotes) lines.push('  [' + e.date + '] ' + e.generalNotes);
+      if (e.newSymptoms) lines.push('  [' + e.date + '] NEW: ' + e.newSymptoms);
+    });
+  }
+  showModal('Vet Summary', lines.join('\n'));
+}
+
+function showModal(title, text) {
+  document.getElementById('modal-container').innerHTML =
+    '<div class="modal-overlay" onclick="closeModal(event)">' +
+    '<div class="modal" onclick="event.stopPropagation()">' +
+    '<h2>' + title + '</h2>' +
+    '<pre id="modal-text">' + escapeHtml(text) + '</pre>' +
+    '<div class="modal-actions">' +
+    '<button class="btn-secondary" onclick="copyModalText()">Copy</button>' +
+    '<button class="btn-secondary" onclick="closeModal()">Close</button>' +
+    '</div></div></div>';
+}
+function closeModal(e) {
+  if (e && e.target && !e.target.classList.contains('modal-overlay')) return;
+  document.getElementById('modal-container').innerHTML = '';
+}
+function copyModalText() {
+  var text = document.getElementById('modal-text').textContent;
+  navigator.clipboard.writeText(text).then(function() { showToast('Copied!', '#22c55e'); }).catch(function() {
+    var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); showToast('Copied!', '#22c55e');
+  });
+}
+function exportCSV() {
+  var dates = Object.keys(allLogs).sort();
+  if (dates.length === 0) { showToast('No data to export', '#ef4444'); return; }
+  var allKeys = ['isoDate'];
+  SELECT_FIELDS.forEach(function(f) { allKeys.push(f.key); });
+  allKeys.push('breakfastBowl', 'dinnerBowl');
+  NUMBER_FIELDS.forEach(function(f) { allKeys.push(f.key); });
+  TEXT_FIELDS.forEach(function(f) { allKeys.push(f.key); });
+  allKeys.push('lastEditedBy');
+  var header = allKeys.join(',');
+  var rows = dates.map(function(d) {
+    var e = allLogs[d];
+    return allKeys.map(function(k) {
+      var v = e[k] != null ? e[k] : '';
+      if (typeof v === 'string' && (v.includes(',') || v.includes('"') || v.includes('\n'))) v = '"' + v.replace(/"/g, '""') + '"';
+      return v;
+    }).join(',');
+  });
+  var csv = header + '\n' + rows.join('\n');
+  var blob = new Blob([csv], { type: 'text/csv' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a'); a.href = url; a.download = 'chewie_health_data.csv'; a.click();
+  URL.revokeObjectURL(url);
+  showToast('CSV downloaded', '#22c55e');
+}
+function escapeHtml(str) {
+  var div = document.createElement('div'); div.textContent = str; return div.innerHTML;
+}
+document.addEventListener('DOMContentLoaded', function() {
+  initUserSelect();
+  document.getElementById('log-date').value = todayStr();
+  buildForm();
+  startListener();
+  setTimeout(function() { populateForm(todayStr()); }, 1000);
+});
+</script>
+</body>
+</html>
