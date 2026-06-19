@@ -163,145 +163,172 @@ canvas{width:100%!important}
     <div class="card"><h2>Food Bowl</h2><div class="chart-container"><canvas id="chart-food"></canvas></div></div>
   </div>
   <div id="screen-mission" class="screen">
-    <h1>🎯 Mission Control</h1>
+    <h1>Mission Control</h1>
+    <p style="font-size:11px;color:var(--muted);margin-bottom:14px">Last updated: June 15, 2026 — Tricia &amp; Sean Evans — DOB April 7, 2020 — Neutered Male DSH Gray</p>
+
     <div class="card">
-      <div class="card-header"><span class="dot dot-orange"></span><h2 style="margin:0">Upcoming Appointments</h2></div>
+      <div class="card-header"><span class="dot dot-red"></span><h2 style="margin:0">Upcoming Appointments</h2></div>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-dot" style="background:#f97316"></div>
+          <div class="tl-dot" style="background:#ef4444"></div>
           <div class="tl-content">
-            <div class="tl-date">SPRINGWATER VET / HAUSER, ID <span class="tag tag-today">ACUPUNCTURE</span></div>
-            <div class="tl-text">Dr. acupuncturist (licensed, equine/small animal). Bring full current flare picture.</div>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot" style="background:#a855f7"></div>
-          <div class="tl-content">
-            <div class="tl-date">JUNE 2, 2026 — MOUNTAIN VIEW VET / HAYDEN <span class="tag tag-june">DR. RIDER</span></div>
-            <div class="tl-text">Blood panel + targeted new tests. See full checklist below.</div>
+            <div class="tl-date">JUNE 19, 2026 — Mountain View Vet, Hayden ID <span class="tag tag-urgent">ABDOMINAL ULTRASOUND</span></div>
+            <div class="tl-text">Drop off 11:30 AM with Pax radiologist. Kidney architecture assessment plus possible aspirates. Scheduled due to protein-losing nephropathy concern from June 2 labs.</div>
           </div>
         </div>
       </div>
+      <div class="note-box"><strong>June 2, 2026 visit completed.</strong> Full Idexx Comprehensive panel, first-ever urinalysis, first-ever fPL. Kidney concern now the most urgent active issue.</div>
     </div>
+
     <div class="card">
-      <div class="collapsible-header" onclick="toggleCollapse(this)">
-        <div class="card-header" style="margin-bottom:0"><span class="dot dot-orange"></span><h2 style="margin:0">Springwater Vet Agenda</h2></div>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="collapsible-body">
-        <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Report full current flare: lymph nodes up (mandibular + popliteal), spine palpable through fur, reduced post-dinner activity, not finishing wet food bowl</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Report pollen/outdoor correlation — flare timing matches pollen season and increased patio time</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Report rock-licking resumed <span class="tag tag-watch">WATCH</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: should we temporarily increase frequency back to weekly or biweekly to resolve this flare?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: her current theory on what is driving the lymph node cycles</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: which specific Liver meridian points she uses and why</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: has her point selection or meridian focus changed over time as his condition evolved?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: which other meridians or regions has she targeted beyond Liver?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: is the Liver imbalance the root or a branch of something deeper?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: would she be willing to coordinate directly with Dr. Rider?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: her opinion on Jade Lady capsule vs previous powder — is effective dose equivalent?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Collect her treatment records / point protocol history if possible</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask: has she noted any connection between his treatment response and seasonal patterns?</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="collapsible-header" onclick="toggleCollapse(this)">
-        <div class="card-header" style="margin-bottom:0"><span class="dot dot-purple"></span><h2 style="margin:0">June 2 — Dr. Rider Agenda</h2></div>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="collapsible-body">
-        <div class="section-label">New Tests — Never Run</div>
-        <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>fPLI (Spec fPL)</strong> — pancreatic specific, never run. <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Urinalysis + UPC</strong> — SDMA persistently 17. <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Protein electrophoresis (SPEP)</strong> — globulin 7.3 H <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Allergy and/or autoimmune panel</strong> — never run <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Lymph node FNA/cytology</strong> — nodes currently flared, optimal time <span class="tag tag-urgent">PRIORITY</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Ionized calcium</strong> <span class="tag tag-watch">ADD</span></span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Bartonella PCR + IFA titer</strong> — rule-out only <span class="tag tag-rule">RULE-OUT</span></span></li>
-        </ul>
-        <div class="section-label">Standard Monitoring</div>
-        <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Full CBC with differential</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Comprehensive chemistry</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">T4 — confirm thyroid still controlled</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Current weight</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Amylase + Lipase</strong> — both elevated Nov 2025 <span class="tag tag-urgent">FLAG</span></span></li>
-        </ul>
-        <div class="section-label">Discussion Points</div>
-        <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Water switch: distilled to filtered May 12. Confirm with labs.</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Flea prevention — safest option given medication sensitivities</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Discuss patio/vector exposure risk in context of Bartonella hypothesis</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Share acupuncture records from Springwater</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Request referral to board-certified veterinary dentist</strong> — FCGS workup <span class="tag tag-urgent">PRIORITY</span></span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="dot dot-green"></span><h2 style="margin:0">Current Protocol</h2></div>
+      <div class="card-header"><span class="dot dot-green"></span><h2 style="margin:0">Completed — May Acupuncture &amp; June 2 Vet Visit</h2></div>
+      <div class="section-label">May 13 Acupuncture (Springwater)</div>
       <ul class="checklist">
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Thyro-Tabs 0.1mg — half tab twice daily</span></li>
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Jade Lady (Yu Nu Jian) — capsule with powder, twice daily</span></li>
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Acupuncture — currently monthly (Springwater Vet)</span></li>
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Diet: Fussy Cat wet food + dry + treats</span></li>
-        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Water: switched distilled to filtered (May 12, 2026)</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text done-text">Flare reported, Liver meridian discussion held</span></li>
       </ul>
-      <div class="note-box"><strong>No flea prevention currently.</strong> Discuss with Dr. Rider June 2.</div>
+      <div class="section-label">June 2 Dr. Rider Visit — Results In</div>
+      <ul class="checklist">
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text done-text">Full comprehensive panel, first urinalysis, first Spec fPL run</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text done-text">fPL normal — pancreatitis ruled out</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text done-text">Urine protein 4+ found — protein-losing nephropathy discussed</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text done-text">Abdominal ultrasound scheduled for June 19</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Still not done: SPEP, allergy/autoimmune panel, ionized calcium, Bartonella, formal UPC, lymph node FNA, dental specialist referral</span></li>
+      </ul>
     </div>
+
     <div class="card">
-      <div class="card-header"><span class="dot dot-yellow"></span><h2 style="margin:0">Last Labs — Nov 14, 2025</h2></div>
+      <div class="collapsible-header" onclick="toggleCollapse(this)">
+        <div class="card-header" style="margin-bottom:0"><span class="dot dot-red"></span><h2 style="margin:0">June 19 — Ultrasound Agenda</h2></div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="collapsible-body">
+        <div class="section-label">Primary Goals</div>
+        <ul class="checklist">
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>Kidney architecture</strong> — size, shape, cortex/medulla definition, signs of chronic damage <span class="tag tag-urgent">PRIORITY</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Look for masses or structural abnormality anywhere in abdomen</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Assess internal lymph nodes given chronic lymphadenopathy history</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Liver appearance — given Liver meridian focus and elevated liver-adjacent enzymes</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Aspirates if anything abnormal is found</span></li>
+        </ul>
+        <div class="section-label">Questions to Ask</div>
+        <ul class="checklist">
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Does kidney appearance match the SDMA/protein trajectory, or are kidneys structurally healthier than labs suggest?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask Dr. Rider to formally request UPC if not already on the order</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Discuss renal diet transition timing</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask about kidney-supportive medications (e.g. benazepril) if protein-losing nephropathy confirmed</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Revisit internal medicine referral decision now that ultrasound data will be in hand</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ask whether worsening anemia changes any urgency assessment</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><span class="dot dot-red"></span><h2 style="margin:0">Last Labs — June 2, 2026</h2></div>
       <table class="lab-table">
         <thead><tr><th>Test</th><th>Result</th><th>Normal</th><th>Flag</th><th>Trend</th></tr></thead>
         <tbody>
-          <tr><td>T4</td><td>2.3</td><td>0.8-4.7</td><td class="flag-ok">OK</td><td class="trend-flat">stable</td></tr>
-          <tr><td>Calcium</td><td>9.4</td><td>8.2-11.2</td><td class="flag-ok">OK</td><td class="trend-down">improved</td></tr>
-          <tr><td>SDMA</td><td>17</td><td>0-14</td><td class="flag-h">H</td><td class="trend-flat">persistent</td></tr>
-          <tr><td>Sodium</td><td>146</td><td>147-157</td><td class="flag-l">L</td><td class="trend-watch">low</td></tr>
-          <tr><td>Globulin</td><td>7.3</td><td>3.0-5.9</td><td class="flag-h">H</td><td class="trend-up">elevated</td></tr>
-          <tr><td>A/G Ratio</td><td>0.4</td><td>0.5-1.2</td><td class="flag-l">L</td><td class="trend-up">concern</td></tr>
-          <tr><td>Phosphorus</td><td>6.4</td><td>2.9-6.3</td><td class="flag-h">H</td><td class="trend-flat">stable</td></tr>
-          <tr><td>Platelets</td><td>65</td><td>100-440</td><td class="flag-l">L</td><td class="trend-flat">recurring</td></tr>
-          <tr><td>Amylase</td><td>2344</td><td>623-2239</td><td class="flag-h">H</td><td class="trend-up">new high</td></tr>
-          <tr><td>Lipase</td><td>62</td><td>0-45</td><td class="flag-h">H</td><td class="trend-up">watch</td></tr>
-          <tr><td>Total Protein</td><td>10.0</td><td>6.3-8.8</td><td class="flag-h">H</td><td class="trend-up">elevated</td></tr>
-          <tr><td>Creatinine</td><td>1.8</td><td>0.9-2.3</td><td class="flag-ok">OK</td><td class="trend-flat">stable</td></tr>
+          <tr><td>T4</td><td>1.2</td><td>0.8-4.7</td><td class="flag-ok">OK</td><td class="trend-down">watch (1x dosing)</td></tr>
+          <tr><td>Calcium</td><td>10.5</td><td>8.2-11.2</td><td class="flag-ok">OK</td><td class="trend-up">slight rise</td></tr>
+          <tr><td>SDMA</td><td>21</td><td>0-14</td><td class="flag-h">H</td><td class="trend-up">worsening (was 17)</td></tr>
+          <tr><td>Sodium</td><td>151</td><td>147-157</td><td class="flag-ok">OK</td><td class="trend-down">normalized</td></tr>
+          <tr><td>Globulin</td><td>6.1</td><td>3.0-5.9</td><td class="flag-h">H</td><td class="trend-down">improved (was 7.3)</td></tr>
+          <tr><td>Albumin</td><td>2.3</td><td>2.6-3.9</td><td class="flag-l">L</td><td class="trend-down">new low flag</td></tr>
+          <tr><td>A/G Ratio</td><td>0.4</td><td>0.5-1.2</td><td class="flag-l">L</td><td class="trend-flat">persistent</td></tr>
+          <tr><td>Phosphorus</td><td>4.4</td><td>2.9-6.3</td><td class="flag-ok">OK</td><td class="trend-down">improved</td></tr>
+          <tr><td>RBC</td><td>5.39</td><td>6.50-11.53</td><td class="flag-l">L</td><td class="trend-down">worsening anemia</td></tr>
+          <tr><td>HGB</td><td>9.1</td><td>10.6-16.7</td><td class="flag-l">L</td><td class="trend-down">worsening</td></tr>
+          <tr><td>MCV</td><td>58</td><td>38-53</td><td class="flag-h">H</td><td class="trend-up">new — macrocytic</td></tr>
+          <tr><td>Amylase</td><td>2809</td><td>623-2239</td><td class="flag-h">H</td><td class="trend-up">new high</td></tr>
+          <tr><td>Lipase</td><td>14</td><td>0-45</td><td class="flag-ok">OK</td><td class="trend-down">normalized</td></tr>
+          <tr><td>Urine Protein</td><td>4+</td><td>Negative</td><td class="flag-h">H</td><td class="trend-up">major concern (was 1+ in 2024)</td></tr>
+          <tr><td>Spec fPL</td><td>4.1</td><td>0.0-4.4</td><td class="flag-ok">OK</td><td class="trend-flat">new test — pancreatitis ruled out</td></tr>
         </tbody>
       </table>
-      <div class="note-box"><strong>Red flags:</strong> Platelets 65 (recurring), Globulin 7.3 + reversed A/G, Amylase + Lipase both elevated (run fPLI), SDMA 17 + Phosphorus 6.4 (run UPC).</div>
+      <div class="note-box"><strong>Dr. Rider's June 3 call:</strong> Mildly anemic, likely anemia of chronic disease. SDMA up 17 to 21. Albumin low, protein in urine. Amylase still elevated. Discussed potential protein-losing nephropathy. Recommended abdominal ultrasound (June 19). Recommended internal medicine referral again — owner wants to start in-clinic first.</div>
+      <div class="note-box" style="margin-top:8px"><strong>What improved:</strong> Sodium fully normalized (water switch worked), phosphorus back to normal, lipase normalized, globulin trending down, fPL normal (pancreatitis ruled out).</div>
     </div>
+
     <div class="card">
       <div class="card-header"><span class="dot dot-blue"></span><h2 style="margin:0">Weight History (lbs)</h2></div>
       <div class="weight-chart">
         <div class="bar-wrap"><div class="bar" style="height:18px;background:#475569"></div><div class="bar-val">2.7</div><div class="bar-label">Jun20</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:58px;background:#3b82f6"></div><div class="bar-val">9.9</div><div class="bar-label">Oct21</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:48px;background:#3b82f6"></div><div class="bar-val">9.0</div><div class="bar-label">Apr24</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:48px;background:#3b82f6"></div><div class="bar-val">9.9</div><div class="bar-label">Oct21</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:44px;background:#3b82f6"></div><div class="bar-val">9.0</div><div class="bar-label">Apr24</div></div>
         <div class="bar-wrap"><div class="bar" style="height:38px;background:#f97316"></div><div class="bar-val">7.2</div><div class="bar-label">Jul24</div></div>
         <div class="bar-wrap"><div class="bar" style="height:40px;background:#f97316"></div><div class="bar-val">7.3</div><div class="bar-label">Aug24</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:58px;background:#22c55e"></div><div class="bar-val">9.8</div><div class="bar-label">Jun25</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:50px;background:#eab308"></div><div class="bar-val">9.0</div><div class="bar-label">Nov25</div></div>
-        <div class="bar-wrap"><div class="bar" style="height:54px;background:#eab308"></div><div class="bar-val">9.5</div><div class="bar-label">May26</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:48px;background:#22c55e"></div><div class="bar-val">9.8</div><div class="bar-label">Jun25</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:44px;background:#eab308"></div><div class="bar-val">9.0</div><div class="bar-label">Nov25</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:46px;background:#eab308"></div><div class="bar-val">9.5</div><div class="bar-label">May26</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:44px;background:#f97316"></div><div class="bar-val">9.0</div><div class="bar-label">Jun2-26</div></div>
       </div>
-      <div class="note-box">May 12, 2026: <strong>9.5 lbs</strong>. Down 0.3 lbs from Nov 2025. Monitor closely.</div>
+      <div class="note-box"><strong>Pattern:</strong> June 2 official vet weight: <strong>9.0 lbs</strong>, down from home-weighed 9.5 lbs three weeks prior. Now matches lowest historical points. Kidney workup is priority; weight may stabilize once addressed.</div>
     </div>
+
     <div class="card">
       <div class="collapsible-header" onclick="toggleCollapse(this)">
-        <div class="card-header" style="margin-bottom:0"><span class="dot dot-purple"></span><h2 style="margin:0">Active Hypotheses</h2></div>
+        <div class="card-header" style="margin-bottom:0"><span class="dot dot-red"></span><h2 style="margin:0">Active Hypotheses (Updated June 2, 2026)</h2></div>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <div class="collapsible-body">
-        <div class="hypothesis"><strong>#1 — Feline Chronic Gingivostomatitis (FCGS) as Primary Clinical Expression</strong><br>Immune-mediated syndrome explaining entire oral history. Cycling lymph nodes, mobile teeth, foul breath, poor antibiotic/steroid response all fit. Gold standard: full-mouth extraction by board-certified veterinary dentist. <strong>Never done — high priority.</strong></div>
-        <div class="hypothesis"><strong>#2 — Post-Infectious Autoimmune Cascade from 2020 Salivary Infection (Leading Western Theory)</strong><br>Original infection triggered immune cascade never fully resolved. Molecular mimicry driving cyclical lymphadenopathy. Doxycycline produced no change — supports autoimmune not infectious driver. <strong>Allergy/autoimmune panel never run — priority June 2.</strong></div>
-        <div class="hypothesis"><strong>#3 — Liver/Spleen Meridian Dysregulation (TCM — Strongly Supported)</strong><br>Acupuncturist targets Liver meridian nearly every visit. Western labs show elevated liver-adjacent enzymes independently converging on same organ system. Parallel description of #2 in Chinese medicine framework.</div>
-        <div class="hypothesis"><strong>#4 — Early CKD / IRIS Stage 1-2</strong><br>SDMA persistently 17. Phosphorus 6.4 high. Appetite decline and weight loss. Warrants UPC + urinalysis June 2. More aggressive kidney workup may be warranted.</div>
-        <div class="hypothesis"><strong>#5 — Mild/Subclinical Pancreatitis or GI Inflammation</strong><br>Amylase 2344 and lipase 62 both elevated first time Nov 2025. Run fPLI (Spec fPL) — never done.</div>
-        <div class="hypothesis"><strong>#6 — Seasonal Allergic Component</strong><br>Flares correlate with pollen season and increased patio time. Hyperreactive immune system. Allergy panel never run.</div>
-        <div class="hypothesis"><strong>#7 — Bartonella (Rule-Out Only — Low Probability)</strong><br>Never tested. Low flea exposure. Doxycycline produced no change. Single PCR + IFA titer June 2.</div>
-        <div class="hypothesis"><strong>#8 — Mineral Dysregulation from Distilled Water</strong><br>Sodium low 146. Rock-licking = mineral compensation. Switched to filtered water May 12, 2026. June 2 labs will show impact.</div>
+        <div class="hypothesis" style="border-left-color:#ef4444"><strong>#1 — Protein-Losing Nephropathy / Progressive CKD (NEW — Most Urgent)</strong><br>SDMA climbed 17 to 21 (ceiling 14). Urine protein jumped from 1+ (2024) to 4+ (2026) — maximum on dipstick scale. Albumin newly low at 2.3. Non-regenerative anemia worsening with new macrocytic shift (MCV 58, was 51) — consistent with CKD suppressing red cell production. Dr. Rider named protein-losing nephropathy directly. <strong>Ultrasound scheduled June 19; UPC should be requested.</strong> May explain amylase elevation (reduced renal clearance, not pancreatic — fPL confirmed normal).</div>
+        <div class="hypothesis"><strong>#2 — Feline Chronic Gingivostomatitis (FCGS) as Primary Immune Expression</strong><br>FCGS is a recognized immune-mediated syndrome explaining the entire oral history as one diagnosis. Cycling lymph nodes, mobile teeth, foul breath, poor antibiotic/steroid response all fit. Gold standard: full-mouth extraction by board-certified veterinary dentist. <strong>Dental specialist referral never done.</strong></div>
+        <div class="hypothesis"><strong>#3 — Post-Infectious Autoimmune Cascade from 2020 Salivary Infection</strong><br>Original infection triggered immune cascade never fully resolved. Molecular mimicry driving cyclical lymphadenopathy. Globulin trending down (7.3 to 6.1) is a good sign — immune activity may be settling. Doxycycline produced no change, supporting autoimmune not infectious driver. Allergy/autoimmune panel still never run.</div>
+        <div class="hypothesis"><strong>#4 — Liver Meridian Dysregulation (Chinese Medicine Framework)</strong><br>Acupuncturist targets Liver meridian nearly every visit. Lipase fully normalized (62 to 14) — notable improvement since last acupuncture/herb cycle. Globulin also improving. Framework continues to track with Western lab movement.</div>
+        <div class="hypothesis"><strong>#5 — Pancreatitis — RULED OUT</strong><br>Spec fPL run for the first time June 2, 2026: result 4.1 (normal 0.0-4.4). The persistently elevated amylase (now 2809, new high) is not pancreatic — almost certainly explained by reduced renal clearance given kidney findings in #1. Resolved and closed.</div>
+        <div class="hypothesis"><strong>#6 — Seasonal Allergic Component</strong><br>Flares correlate with pollen season and increased patio time. Low flea risk. Co-occurring with #3 rather than independent. Allergy panel still never run.</div>
+        <div class="hypothesis"><strong>#7 — Bartonella (Rule-Out Only — Low Probability)</strong><br>Never tested. Low flea transmission risk. Doxycycline produced no change. Still worth a single PCR + IFA titer — has not been added to any visit yet.</div>
+        <div class="hypothesis"><strong>#8 — Mineral Dysregulation from Distilled Water (Resolved — Sodium Normalized)</strong><br>Sodium was low at 146, now 151 (normal). Water switch to filtered (May 12, 2026) appears to have worked.</div>
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-header"><span class="dot dot-red"></span><h2 style="margin:0">Treatment &amp; Prognosis — Pending June 19 Ultrasound</h2></div>
+      <div class="note-box"><strong>No prognosis assigned yet.</strong> Everything below is contingent on what the ultrasound shows. Two branches depending on kidney structure — fill in actual findings and plan after the appointment.</div>
+      <div class="section-label">Branch A — Kidneys Structurally Healthy</div>
+      <ul class="checklist">
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Likely earlier-stage, more treatable picture</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Renal support diet — lower phosphorus, controlled protein</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Possible medication (e.g. benazepril) to reduce protein leak</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Close monitoring — recheck SDMA, urine protein, albumin in 4-6 weeks</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Reasonable expectation: years of management possible with this path</span></li>
+      </ul>
+      <div class="section-label">Branch B — Kidneys Show Structural Damage</div>
+      <ul class="checklist">
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">More established CKD, likely IRIS Stage 2, possibly approaching Stage 3</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Same renal diet and medications, framed as slowing progression not reversing</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Conversation shifts toward long-term management and quality of life planning</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">May need more frequent rechecks (every 4-8 weeks rather than months)</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Internal medicine referral becomes more strongly warranted</span></li>
+      </ul>
+      <div class="section-label">What's Already Reassuring</div>
+      <ul class="checklist">
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Urine still concentrating well (SG 1.040) — that function intact</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Creatinine still within normal range</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Sodium, phosphorus, lipase all improved this visit</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Cats generally tolerate CKD management better than dogs — multi-year prognoses common with proper care</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Caught early relative to symptoms — no overt clinical kidney failure signs yet (still eating, drinking, active)</span></li>
+      </ul>
+      <div class="section-label">Genuinely Uncertain</div>
+      <ul class="checklist">
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Whether this is new or slowly building since 2024 — no urine protein checked in that gap</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Whether kidney issue is primary or downstream of the chronic immune dysregulation that's been the main story this whole case</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Whether worsening anemia is purely renal or has a separate driver</span></li>
+      </ul>
+      <div class="note-box" style="margin-top:10px"><strong>Fill in after June 19:</strong> Ultrasound findings, Dr. Rider's actual staging/diagnosis, agreed treatment plan, recheck schedule, and realistic prognosis timeline.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><span class="dot dot-green"></span><h2 style="margin:0">Current Protocol</h2></div>
+      <ul class="checklist">
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Thyro-Tabs 0.1mg — half tab twice daily (Fred Meyer Rx, Dr. Rider)</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Jade Lady (Yu Nu Jian) — capsule with powder, twice daily (Springwater Vet)</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Acupuncture — currently monthly (Springwater Vet)</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Diet: Fussy Cat wet food (chicken/gravy) + dry food + treats</span></li>
+        <li><div class="check-box done" style="pointer-events:none"></div><span class="check-text">Water: switched distilled to filtered (May 12, 2026) — sodium now normalized</span></li>
+      </ul>
+      <div class="note-box"><strong>No flea prevention currently.</strong> Discuss with Dr. Rider — Capstar (nitenpyram) as lowest-risk option given sensitivity history.</div>
+    </div>
+
     <div class="card">
       <div class="collapsible-header" onclick="toggleCollapse(this)">
         <div class="card-header" style="margin-bottom:0"><span class="dot dot-red"></span><h2 style="margin:0">Open Questions</h2></div>
@@ -309,16 +336,21 @@ canvas{width:100%!important}
       </div>
       <div class="collapsible-body">
         <ul class="checklist">
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Has Bartonella ever been directly tested? No — run June 2 as rule-out</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Has allergy or autoimmune panel ever been run? No — priority June 2</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Which globulin fraction is elevated? Requires SPEP — never run</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">fPLI never run — add to June 2</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">UPC never run — add to June 2</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Is FCGS the correct framing for his oral disease?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Full-mouth dental radiography under anesthesia — never discussed</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">What specific Liver meridian points does Springwater use?</span></li>
-          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Will Springwater coordinate directly with Dr. Rider?</span></li>
-          <li><div class="check-box done" onclick="toggleCheck(this)"></div><span class="check-text done-text">Current weight — 9.5 lbs May 12, 2026</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Bartonella ever tested? Still no — re-raise for June 19</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Allergy/autoimmune panel ever run? Still no — re-raise for June 19</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">What specific Liver meridian points does Springwater use — has protocol shifted? <span class="tag tag-watch">FOLLOW UP</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Is the Liver imbalance root cause or downstream? <span class="tag tag-watch">FOLLOW UP</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Which globulin fraction elevated? SPEP still never run. Globulin trending down (7.3 to 6.1) though, less urgent.</span></li>
+          <li><div class="check-box done" onclick="toggleCheck(this)"></div><span class="check-text done-text">Pancreatitis question — Spec fPL run June 2: 4.1, normal. Ruled out.</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">SDMA persistently elevated — formal UPC still not run, but urinalysis now shows 4+ protein. Request UPC for June 19.</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Is FCGS the correct framing for his oral disease? Still unasked.</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Full-mouth dental radiography under anesthesia? Still no.</span></li>
+          <li><div class="check-box done" onclick="toggleCheck(this)"></div><span class="check-text done-text">Current weight — 9.0 lbs official, June 2 2026 (home-weighed 9.5 lbs three weeks earlier)</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Will Springwater coordinate directly with Dr. Rider? Not yet confirmed.</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>NEW:</strong> What does June 19 ultrasound show about kidney structure? <span class="tag tag-urgent">KEY QUESTION</span></span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>NEW:</strong> Why did urine protein jump from 1+ to 4+ between Apr 2024 and Jun 2026 — any intermediate urinalysis to see when this started?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>NEW:</strong> Is worsening anemia driven by the kidney issue or a separate process?</span></li>
+          <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text"><strong>NEW:</strong> T4 dropped from 2.3 to 1.2 while dosing reduced to once daily — should it return to twice daily?</span></li>
         </ul>
       </div>
     </div>
@@ -330,7 +362,7 @@ canvas{width:100%!important}
       <button class="btn-secondary" onclick="exportCSV()" style="width:100%;margin-top:10px">📥 Export CSV</button>
     </div>
     <div class="card">
-      <h2>Daily Observations Checklist</h2>
+      <h2>Daily Observations Checklist (Kidney Watch Until June 19)</h2>
       <ul class="checklist">
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Rock/mineral licking — frequency and material</span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Wet food bowl — finishing or leaving remainder?</span></li>
@@ -338,7 +370,9 @@ canvas{width:100%!important}
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Palpable lymph nodes — throat and behind knees</span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Breath odor — normal range or worse than baseline?</span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Patio time duration and time of day</span></li>
-        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Response to water switch — more drinking, less rock licking?</span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Water drinking — any increase could reflect kidney concentrating ability changes <span class="tag tag-watch">KIDNEY WATCH</span></span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Litter box — urinating more or less than usual, any straining <span class="tag tag-watch">KIDNEY WATCH</span></span></li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Lethargy or pale gums — watch for signs anemia is worsening <span class="tag tag-watch">KIDNEY WATCH</span></span></li>
         <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Coat quality — softness or dandruff returning?</span></li>
       </ul>
     </div>
@@ -438,7 +472,8 @@ const NUMBER_FIELDS = [
 ];
 const TEXT_FIELDS = [
   { key: 'generalNotes', label: 'General Notes' },
-  { key: 'newSymptoms', label: 'New or Unusual Symptoms' }
+  { key: 'newSymptoms', label: 'New or Unusual Symptoms' },
+  { key: 'vetLabFlags', label: 'Vet Lab Flags (e.g. anemia trend, SDMA, etc.)' }
 ];
 const SEVERITY_MAP = {};
 SELECT_FIELDS.forEach(function(f) { f.options.forEach(function(o) { SEVERITY_MAP[o.text] = o.severity; }); });
